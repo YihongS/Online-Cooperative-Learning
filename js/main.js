@@ -26,7 +26,7 @@ var showingBoard = false;
 var justShowedBoard = false;
 // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
-  // event.target.playVideo();
+  // event.target.playVideo();不用管
   function updateTime() {
     var oldTime = videoTime;
     if(player && player.getCurrentTime) {
@@ -44,8 +44,9 @@ function onProgress(currentTime) {
   console.log(currentTime);
   if(currentTime >= 129 && currentTime < 130 && !showingBoard && !justShowedBoard) {
     console.log("Trigger");
-    triggerScenePizza();
+    triggerScenePizza();//这里要有括号
   }
+  // 把上面的复制一堆
 }
 
 // 5. The API calls this function when the player's state changes.
@@ -57,7 +58,7 @@ function onPlayerStateChange(event) {
     // setTimeout(triggerScenePizza, 6000);
     done = true;
   } else if (event.data == YT.PlayerState.ENDED) {
-    setTimeout(triggerScenePractice, 0);
+    setTimeout(triggerScenePractice, 0); // 结尾
   }
 }
 function playVideo() {
@@ -92,7 +93,7 @@ function continueScene(el) {
   console.log(next);
   $(el).parent('.scene').fadeOut(function () {
     $(next).fadeIn(function () {
-      if (next.includes('scene-timer')) {
+      if (next.includes('scene-timer')) {//播放声音
         document.getElementById('sound').play();
         setTimeout(continueScene, 4000, $(next).find('.btn-continue'));
       } else if (next.includes('scene-end')) {
@@ -122,6 +123,7 @@ function triggerSceneEnd() {
   startScene('#scene-end');
 }
 
+// 后面都不用改了
 $(document).ready(function () {
   showBoard();
   $('#scene-start').show();

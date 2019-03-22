@@ -18,15 +18,21 @@
       <main>
         <audio id="sound" src="sounds/sound.mov" preload="auto"></audio>
         <audio id="ending" src="sounds/ending.mov" preload="auto"></audio>
+
         <div id="board">
+          <!-- 这是一个scene -->
           <div id="scene-start" class="scene">
             <div class="icon">
               <i class="fas fa-book"></i>
             </div>
             <h2>Are You Ready?</h2>
             <p>In the following 5-min course, you will learn about how microwave ovens work. Click start to begin our wonderful journey!</p>
-            <a class="btn-continue" data-next="#scene-title-pasta"><i class="far fa-play-circle"></i>Start</a>
+            <a class="btn-continue" data-next="#scene-title-pasta">
+<!-- 点了button的目标 -->
+              <i class="far fa-play-circle"></i>Start</a>
           </div>
+<!-- 到这里 -->
+
           <div id="scene-end" class="scene">
             <div class="icon">
               <i class="fas fa-glass-cheers"></i>
@@ -72,16 +78,22 @@
                 <div class="minute"></div>
                 <div class="second"></div>
               </div>
+              <!-- 上面是动画 -->
             </div>
             <h2 class="heating">Heating</h2>
             <p>Your pasta is on the way!</p>
             <a class="btn-continue btn-hidden" data-next="#scene-question-pasta"><i class="fas fa-clock"></i>Heating</a>
           </div>
+          <!-- 下面是选择题 -->
           <div id="scene-question-pasta" class="scene scene-question">
             <h2>Your Pasta Is Ready!</h2>
             <p>After heating with the same amount of time, which result do you expect?</p>
             <div class="gallery select" data-target="#scene-answer-pasta">
+              <!-- answer pasta是self-explanation的界面 -->
               <div class="frame option" data-next="#scene-wrong-pasta">
+                <!-- 这里会记住是right还是wrong的答案
+                灿海说我们可以存在localStorage上 -->
+                <!-- 选择题点了选项之后的目标 -->
                 <p>The pasta in the <span>metal container</span> is hotter.</p>
               </div>
               <div class="frame option" data-next="#scene-correct-pasta">
@@ -93,6 +105,7 @@
             </div>
             <a class="btn-continue btn-disabled" data-next="#scene-answer-pasta"><i class="fas fa-arrow-circle-right"></i>Continue</a>
           </div>
+          <!-- 这里是answer pasta -->
           <div id="scene-answer-pasta" class="scene scene-answer">
             <h2>Justify Your Answer</h2>
             <p>Why do you choose the option?</p>
@@ -115,6 +128,8 @@
             <p>You chose the incorrect result. Let's watch the video and find the right answer!</p>
             <a class="btn-end"><i class="fas fa-magic"></i>Check It Out</a>
           </div>
+          <!-- btn-end就是之后没有continue了，最后一个页面 -->
+          <!-- pasta在这里结束，pizza在这里开始 -->
 
           <div id="scene-title-pizza" class="scene scene-title">
             <div class="icon">
@@ -194,6 +209,7 @@
             <p>You chose the incorrect result. Let's watch the video and find the right answer!</p>
             <a class="btn-end"><i class="fas fa-magic"></i>Check It Out</a>
           </div>
+          <!-- pizza到这里结束，后面是practice -->
 
           <div id="scene-title-practice" class="scene scene-title">
             <div class="icon">
