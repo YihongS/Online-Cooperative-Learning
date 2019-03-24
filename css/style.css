@@ -110,17 +110,17 @@ main {
 }
 
 
-.scene .icon-play {
-  color:#C9C4B5 !important;
-  font-size:40px !important;
-  display:inline-block !important;
-  margin-left:30px !important;
-  vertical-align:middle !important;
+/*.scene .icon-play {
+  color:#C9C4B5 ;
+  font-size:40px ;
+  display:inline-block ;
+  margin-left:30px ;
+  vertical-align:middle ;
 }
-
-.scene .icon-play:hover {
-  color: #117B71 !important;
-}
+*/
+/*.scene .icon-play:hover {
+  color: #117B71 ;
+}*/
 
 
 .scene a {
@@ -135,6 +135,23 @@ main {
   cursor: pointer;
   transition: .3s all ease-in-out;
   margin:20px auto;
+}
+
+.scene a.icon-play {
+  color:#C9C4B5 ;
+  font-size:40px ;
+  display:inline-block ;
+  margin-left:10px ;
+  vertical-align:middle ;
+  width:0px;
+  height:24px;
+  background: #FAEFD0;
+  margin-top:10px;
+}
+
+.scene a.icon-play:hover {
+  color: #117B71;
+  background: #FAEFD0;
 }
 
 .scene a:hover {

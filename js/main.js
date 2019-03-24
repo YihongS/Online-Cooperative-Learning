@@ -122,6 +122,11 @@ function triggerSceneListen() {
   startScene('#scene-listen');
 }
 //
+function triggerSceneVideo1() {
+  showBoard();
+  startScene('#scene-video1');
+}
+//
 
 function triggerScenePizza() {
   pauseVideo();
@@ -143,8 +148,9 @@ function triggerSceneEnd() {
 
 // 后面都不用改了
 $(document).ready(function () {
-  showBoard();
-  $('#scene-start').show();
+  // showBoard();
+  // $('#scene-start').show();
+  hideBoard();
 
   $('.btn-start').click(function () {
     // hideBoard();
