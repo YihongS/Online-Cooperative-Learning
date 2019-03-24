@@ -58,7 +58,7 @@ function onPlayerStateChange(event) {
     // setTimeout(triggerScenePizza, 6000);
     done = true;
   } else if (event.data == YT.PlayerState.ENDED) {
-    setTimeout(triggerScenePractice, 0); // 结尾
+    setTimeout(triggerSceneExplain, 0); // 结尾
   }
 }
 function playVideo() {
@@ -102,12 +102,26 @@ function continueScene(el) {
     });
   });
 }
+
 function endScene(el) {
   $(el).parent('.scene').fadeOut(function () {
     hideBoard();
     playVideo();
   });
 }
+
+// 我加的
+function triggerSceneExplain() {
+  pauseVideo();
+  showBoard();
+  startScene('#scene-explain');
+}
+
+function triggerSceneListen() {
+  showBoard();
+  startScene('#scene-listen');
+}
+//
 
 function triggerScenePizza() {
   pauseVideo();
@@ -122,6 +136,10 @@ function triggerSceneEnd() {
   showBoard();
   startScene('#scene-end');
 }
+
+
+
+
 
 // 后面都不用改了
 $(document).ready(function () {

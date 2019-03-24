@@ -109,6 +109,20 @@ main {
   box-sizing: border-box;
 }
 
+
+.scene .icon-play {
+  color:#C9C4B5 !important;
+  font-size:40px !important;
+  display:inline-block !important;
+  margin-left:30px !important;
+  vertical-align:middle !important;
+}
+
+.scene .icon-play:hover {
+  color: #117B71 !important;
+}
+
+
 .scene a {
   width: 150px;
   padding: 12px 18px;
@@ -263,18 +277,6 @@ main {
   background: #FFFBF0;
 }
 
-
-
-.scene .icon-play {
-  color:#C9C4B5;
-  font-size:40px;
-  display:inline-block;
-  margin-left:30px;
-  vertical-align:middle;
-}
-.scene .icon-play:hover {
-  color: #117B71;
-}
 
 .scene .gallery .frame {
   width: 80%;

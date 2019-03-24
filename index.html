@@ -26,7 +26,7 @@
               <i class="fas fa-book"></i>
             </div>
             <h2>Are You Ready?</h2>
-            <p>In the following 5-min course, you will learn about how microwave ovens work. Click start to begin our wonderful journey!</p>
+            <p>This is a collaborative course about how microwaves work. You and your partner will be assigned to learn different knowlege related to the topic. After watching the video, you need to explain to your patner what you have learned, and also listen to your partner's explanation. After that, you will take test individually about all the knowlege covered. Click start to begin our wonderful journey!</p>
             <a class="btn-continue" data-next="#scene-title-pasta">
 <!-- 点了button的目标 -->
               <i class="far fa-play-circle"></i>Start</a>
@@ -50,6 +50,7 @@
             <p>Following we will do an experiment on heating pasta to see how the material of conatiners would affect microwave oven heating and find the answer in the following video.</p>
             <a class="btn-continue" data-next="#scene-desc-pasta"><i class="fas fa-arrow-circle-right"></i>Continue</a>
           </div>
+
           <div id="scene-desc-pasta" class="scene scene-desc">
             <h2>Heating Pasta</h2>
             <p>Your want to heat your pasta using the microwave oven. There are 2 conatiners of different material. One is a metal container, another is a ceramic container. Both of them contain your pasta. Let's put them in two microwave ovens and heat with the same amout of time and see what will happen.</p>
@@ -116,9 +117,11 @@
             <div class="icon">
               <i class="far fa-check-circle"></i>
             </div>
+
             <h2>Correct!</h2>
-            <p>Your chose the correct result. Let's watch the video and see if your explanation is right.</p>
+            <p>You chose the correct result. Let's watch the video and see if your explanation is right.</p>
             <a class="btn-end"><i class="fas fa-magic"></i>Check It Out</a>
+
           </div>
           <div id="scene-wrong-pasta" class="scene scene-feedback">
             <div class="icon icon-alert">
@@ -327,7 +330,91 @@
             <p>There is a common misconception that microwave ovens heat food from the inside out. However, actually microwaves heat all the water molecules in the food at the same time. So it heats all parts of the food at the same time.<br>It is the conventional oven that heats food by heating the air and conduct the heat from the outside of the food to the inside, not the microwave oven.</p>
             <a class="btn-continue" data-next="#scene-end"><i class="fas fa-arrow-circle-right"></i>Continue</a>
           </div>
+          <!-- Explanation -->
+          <div id="scene-explain" class="scene">
+            <h3>Explain to your partner what you just learned</h3>
+            <p2>You can read your own notes or look back to the corresponding video piece if you need.</p2>
+            <div class="explanationline">
+              <div class="self-explanation">
+               <p3>explanation explanation explanation</p3>
+              </div>
+              <div class="icon-play" data-next="#scene-video1">
+                <i class="fas fa-play-circle"></i>
+              </div>
+            </div>
+            <div class="explanationline">
+              <div class="self-explanation">
+               <p3>explanation explanation explanation</p3>
+              </div>
+              <div class="icon-play">
+                <i class="fas fa-play-circle"></i>
+              </div>
+            </div>
+            <div class="explanationline">
+              <div class="self-explanation">
+               <p3 >explanation explanation explanation</p3>
+              </div>
+              <div class="icon-play">
+                <i class="fas fa-play-circle"></i>
+              </div>
+            </div>
+            <div class="explanationline">
+              <div class="self-explanation">
+               <p3>explanation explanation explanation</p3>
+              </div>
+              <div class="icon-play">
+                <i class="fas fa-play-circle"></i>
+              </div>
+            </div>
+            <div class="explanationline">
+              <div class="self-explanation">
+               <p3>explanation explanation explanation</p3>
+              </div>
+              <div class="icon-play">
+                <i class="fas fa-play-circle"></i>
+              </div>
+            </div>
+
+            <a class="btn-continue" data-next="#scene-listen">
+              <i class="far fa-play-circle"></i>Continue</a>
+          </div>
         </div>
+<!-- listener -->
+          <div id="scene-listen" class="scene">
+            <h3>Now listen to your partner's explanation</h3>
+            <p2>Pay attention to whether he/she has covered all the knowlege components below.</p2>
+              <div class="kc">
+               <p3>knowledge component1</p3>
+              </div>
+              <div class="kc">
+               <p3>knowledge component2</p3>
+              </div>
+              <div class="kc">
+               <p3>knowledge component3</p3>
+              </div>
+              <div class="kc">
+               <p3>knowledge component4</p3>
+              </div>
+              <div class="kc">
+               <p3>knowledge component5</p3>
+              </div>
+            <a class="btn-continue" data-next="#scene-title-practice">
+<!-- 点了button的目标 -->
+              <i class="far fa-play-circle"></i>Got Them</a>
+          </div>
+
+          <!-- video piece 1 -->
+          <div id="scene-video1" class="scene">
+            <div class="icon-close">
+              <i class="fas fa-times-circle"></i>
+            </div>
+            <h4>Part1</h4>
+            <iframe class="videopiece" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+              <div class="kcexplain">
+               <p3>self explanation1</p3>
+              </div>
+          </div>
+
         <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
         <div id="player"></div>
       </main>
