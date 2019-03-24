@@ -51,7 +51,26 @@ function onProgress(currentTime) {
   if(currentTime >= 12 && currentTime < 13 && !showingBoard && !justShowedBoard) {
     console.log("Trigger");
     triggerSceneKc1();//这里要有括号
+  }
 
+  if(currentTime >= 22 && currentTime < 23 && !showingBoard && !justShowedBoard) {
+    console.log("Trigger");
+    triggerSceneKc2();//这里要有括号
+  }
+
+  if(currentTime >= 32 && currentTime < 33 && !showingBoard && !justShowedBoard) {
+    console.log("Trigger");
+    triggerSceneKc3();//这里要有括号
+  }
+
+  if(currentTime >= 42 && currentTime < 43 && !showingBoard && !justShowedBoard) {
+    console.log("Trigger");
+    triggerSceneKc4();//这里要有括号
+  }
+
+  if(currentTime >= 52 && currentTime < 53 && !showingBoard && !justShowedBoard) {
+    console.log("Trigger");
+    triggerSceneKc5();//这里要有括号
   }
   // 把上面的复制一堆
 }
@@ -102,7 +121,8 @@ function continueScene(el) {
     $(next).fadeIn(function () {
       if (next.includes('scene-timer')) {//播放声音
         document.getElementById('sound').play();
-        setTimeout(continueScene, 4000, $(next).find('.btn-continue'));
+        // !!!!!!!!!!important!
+        setTimeout(continueScene, 4, $(next).find('.btn-continue'));
       } else if (next.includes('scene-end')) {
         document.getElementById('ending').play();
       }
@@ -155,7 +175,26 @@ function triggerSceneKc1(){
   showBoard();
   startScene('#scene-kc1');
 }
-
+function triggerSceneKc2(){
+  pauseVideo();
+  showBoard();
+  startScene('#scene-kc2');
+}
+function triggerSceneKc3(){
+  pauseVideo();
+  showBoard();
+  startScene('#scene-kc3');
+}
+function triggerSceneKc4(){
+  pauseVideo();
+  showBoard();
+  startScene('#scene-kc4');
+}
+function triggerSceneKc5(){
+  pauseVideo();
+  showBoard();
+  startScene('#scene-kc5');
+}
 
 
 
@@ -213,14 +252,42 @@ $(document).ready(function () {
   // var selfExplanation = document.getElementById('#input-answer-kc1');
   var selfExplanation = '';
   $('#btn-continue-kc1').click(function(){
-    selfExplanation = $('#input-answer-kc1').val();
-    console.log(selfExplanation);
-    localStorage.setItem('selfExplanation',JSON.stringify(selfExplanation));
-    console.log(localStorage.getItem('selfExplanation'));
-    var hintKc1 = JSON.parse(localStorage.getItem('selfExplanation'));
-  console.log("HINT="+hintKc1);
-  // document.getElementById('self-explanation-kc1').innerHTML = hintKc1;
+    selfExplanationKc1 = $('#input-answer-kc1').val();
+    // console.log(selfExplanation);
+    localStorage.setItem('selfExplanationKc1',JSON.stringify(selfExplanationKc1));
+    // console.log(localStorage.getItem('selfExplanation'));
+    var hintKc1 = JSON.parse(localStorage.getItem('selfExplanationKc1'));
+    // console.log("HINT="+hintKc1);
+    // document.getElementById('self-explanation-kc1').innerHTML = hintKc1;
     $('#self-explanation-kc1').text(hintKc1);
+  })
+
+  $('#btn-continue-kc2').click(function(){
+    selfExplanationKc2 = $('#input-answer-kc2').val();
+    localStorage.setItem('selfExplanationKc2',JSON.stringify(selfExplanationKc2));
+    var hintKc2 = JSON.parse(localStorage.getItem('selfExplanationKc2'));
+    $('#self-explanation-kc2').text(hintKc2);
+  })
+
+  $('#btn-continue-kc3').click(function(){
+    selfExplanationKc3 = $('#input-answer-kc3').val();
+    localStorage.setItem('selfExplanationKc3',JSON.stringify(selfExplanationKc3));
+    var hintKc3 = JSON.parse(localStorage.getItem('selfExplanationKc3'));
+    $('#self-explanation-kc3').text(hintKc3);
+  })
+
+  $('#btn-continue-kc4').click(function(){
+    selfExplanationKc4 = $('#input-answer-kc4').val();
+    localStorage.setItem('selfExplanationKc4',JSON.stringify(selfExplanationKc4));
+    var hintKc4 = JSON.parse(localStorage.getItem('selfExplanationKc4'));
+    $('#self-explanation-kc4').text(hintKc4);
+  })
+
+  $('#btn-continue-kc5').click(function(){
+    selfExplanationKc5 = $('#input-answer-kc5').val();
+    localStorage.setItem('selfExplanationKc5',JSON.stringify(selfExplanationKc5));
+    var hintKc5 = JSON.parse(localStorage.getItem('selfExplanationKc5'));
+    $('#self-explanation-kc5').text(hintKc5);
   })
 
 })
