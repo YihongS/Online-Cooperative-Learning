@@ -107,7 +107,7 @@
           <div id="scene-answer-pasta" class="scene scene-answer">
             <h2>Justify Your Answer</h2>
             <p>Why do you choose the option?</p>
-            <textarea id="input-answer-kc1" class="input-answer" rows="4" placeholder="Explain why you think your answer is right."></textarea>
+            <textarea class="input-answer" rows="4" placeholder="Explain why you think your answer is right."></textarea>
             <a class="btn-continue btn-disabled" data-next="#scene-wrong-pasta"><i class="fas fa-arrow-circle-right"></i>Continue</a>
           </div>
           <div id="scene-correct-pasta" class="scene scene-feedback">
@@ -407,6 +407,18 @@
                <p3>self explanation1</p3>
               </div>
           </div>
+
+
+          <!-- 这里开始是前面每一kc的self-explanation -->
+          <div id="scene-kc1" class="scene scene-answer">
+            <h2>What did you learnt?</h2>
+            <p>What is microwave?</p>
+            <textarea id="input-answer-kc1" class="input-answer" rows="4" placeholder="Explain in a way that you would explain it to your partner."></textarea>
+            <!-- <!!!!!!!!!!!!!IMPORTANT></!!!!!!!!!!!!!IMPORTANT> -->
+            <a id = "btn-continue-kc1" class="btn-end btn-continue btn-disabled"><i class="fas fa-magic"></i>Continue</a>
+            <!-- <a class="btn-continue btn-disabled" data-next="#scene-wrong-pasta"><i class="fas fa-arrow-circle-right"></i>Continue</a> -->
+          </div>
+
 
 
         </div>

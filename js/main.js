@@ -46,6 +46,13 @@ function onProgress(currentTime) {
     console.log("Trigger");
     triggerScenePizza();//这里要有括号
   }
+
+  // 下面是我复制的
+  if(currentTime >= 12 && currentTime < 13 && !showingBoard && !justShowedBoard) {
+    console.log("Trigger");
+    triggerSceneKc1();//这里要有括号
+
+  }
   // 把上面的复制一堆
 }
 
@@ -142,15 +149,22 @@ function triggerSceneEnd() {
   startScene('#scene-end');
 }
 
+// 下面是各种KC的self-explanation环节
+function triggerSceneKc1(){
+  pauseVideo();
+  showBoard();
+  startScene('#scene-kc1');
+}
+
 
 
 
 
 // 后面都不用改了
 $(document).ready(function () {
-  // showBoard();
-  // $('#scene-start').show();
-  hideBoard();
+  showBoard();
+  $('#scene-start').show();
+  // hideBoard();
 
   $('.btn-start').click(function () {
     // hideBoard();
@@ -196,23 +210,17 @@ $(document).ready(function () {
   })
 
   // 下面是对local storage的尝试
-// var selfExplanation = document.getElementById('#input-answer-kc1');
-var selfExplanation = '';
-$('#btn-continue-kc1').click(function(){
-  selfExplanation = $('#input-answer-kc1').val();
-  // console.log(selfExplanation);
-  localStorage.setItem('selfExplanation',JSON.stringify(selfExplanation));
-  // console.log(localStorage.getItem('selfExplanation'));
-  var hintKc1 = JSON.parse(localStorage.getItem('selfExplanation'));
-// console.log("HINT="+hintKc1);
-// document.getElementById('self-explanation-kc1').innerHTML = hintKc1;
-$('#self-explanation-kc1').text(hintKc1);
-})
+  // var selfExplanation = document.getElementById('#input-answer-kc1');
+  var selfExplanation = '';
+  $('#btn-continue-kc1').click(function(){
+    selfExplanation = $('#input-answer-kc1').val();
+    console.log(selfExplanation);
+    localStorage.setItem('selfExplanation',JSON.stringify(selfExplanation));
+    console.log(localStorage.getItem('selfExplanation'));
+    var hintKc1 = JSON.parse(localStorage.getItem('selfExplanation'));
+  console.log("HINT="+hintKc1);
+  // document.getElementById('self-explanation-kc1').innerHTML = hintKc1;
+    $('#self-explanation-kc1').text(hintKc1);
+  })
 
 })
-
-
-
-
-
-
