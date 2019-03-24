@@ -194,6 +194,21 @@ $(document).ready(function () {
       $btn.removeClass('btn-disabled');
     }
   })
+
+  // 下面是对local storage的尝试
+// var selfExplanation = document.getElementById('#input-answer-kc1');
+var selfExplanation = '';
+$('#btn-continue-kc1').click(function(){
+  selfExplanation = $('#input-answer-kc1').val();
+  // console.log(selfExplanation);
+  localStorage.setItem('selfExplanation',JSON.stringify(selfExplanation));
+  // console.log(localStorage.getItem('selfExplanation'));
+  var hintKc1 = JSON.parse(localStorage.getItem('selfExplanation'));
+// console.log("HINT="+hintKc1);
+// document.getElementById('self-explanation-kc1').innerHTML = hintKc1;
+$('#self-explanation-kc1').text(hintKc1);
+})
+
 })
 
 
