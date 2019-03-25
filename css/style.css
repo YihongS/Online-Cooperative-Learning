@@ -121,7 +121,16 @@ main {
 /*.scene .icon-play:hover {
   color: #117B71 ;
 }*/
+#scene-landing h3{
+  margin: 0 auto;
+  /*margin-bottom: 50px;*/
+  text-align: center;
+}
 
+#scene-landing p2{
+  margin-top: 50px;
+  text-align: center;
+}
 
 .scene a {
   width: 150px;
@@ -135,6 +144,7 @@ main {
   cursor: pointer;
   transition: .3s all ease-in-out;
   margin:20px auto;
+  text-decoration: none;
 }
 
 .scene a.icon-play {
