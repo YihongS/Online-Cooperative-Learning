@@ -164,6 +164,23 @@ main {
   background: #FAEFD0;
 }
 
+.scene a.icon-close {
+  color:#C9C4B5;
+  font-size:30px ;
+  display:inline-block ;
+  width:0px;
+  height:0px;
+  background: #FAEFD0;
+  position: absolute;
+  left:840px;
+  top:-15px;
+}
+.scene a.icon-close:hover{
+  color: #117B71;
+  background: #FAEFD0;
+}
+
+
 .scene a:hover {
   background: #117B71;
 }
@@ -542,14 +559,6 @@ footer {
   margin-top:20px;
 }
 
-.icon-close {
-  color:#C9C4B5;
-  font-size:30px;
-  display:inline-block;
-  position:absolute;
-  left:850px;
-  top:20px;
-}
 
 .scene h4 {
   font-family: 'Lobster', cursive;
@@ -560,9 +569,10 @@ footer {
 }
 
 
-.scene .icon-close:hover {
+/*.scene .icon-close:hover {
   color: #117B71;
-}
 
+}
+*/
 
 

@@ -39,6 +39,7 @@
             <a class="btn-share"><i class="fab fa-twitter"></i>Share</a>
           </div>
 
+<!-- Experiment 1 -->
           <div id="scene-title-pasta" class="scene scene-title">
             <div class="icon">
               <i class="far fa-grin"></i>
@@ -116,20 +117,20 @@
             </div>
 
             <h2>Correct!</h2>
-            <p>You chose the correct result. Let's watch the video and see if your explanation is right.</p>
-            <a class="btn-end"><i class="fas fa-magic"></i>Check It Out</a>
+            <p>You chose the correct result. Now explain to your partner what you just leanred.</p>
+            <a class="btn-continue" data-next="#scene-explain"><i class="fas fa-magic"></i>Continue</a>
           </div>
           <div id="scene-wrong-pasta" class="scene scene-feedback">
             <div class="icon icon-alert">
               <i class="far fa-times-circle"></i>
             </div>
             <h2>Incorrect</h2>
-            <p>You chose the incorrect result. Let's watch the video and find the right answer!</p>
-            <a class="btn-end"><i class="fas fa-magic"></i>Check It Out</a>
+            <p>You chose the incorrect result. Maybe you need to review your notes and the video before explaining to your partner.</p>
+            <a class="btn-continue" data-next="#scene-explain"><i class="fas fa-magic"></i>Continue</a>
           </div>
           <!-- btn-end就是之后没有continue了，最后一个页面 -->
           <!-- pasta在这里结束，pizza在这里开始 -->
-
+<!-- Experiment 2 -->
           <div id="scene-title-pizza" class="scene scene-title">
             <div class="icon">
               <i class="far fa-grin"></i>
@@ -197,16 +198,16 @@
               <i class="far fa-check-circle"></i>
             </div>
             <h2>Correct!</h2>
-            <p>Your chose the correct result. Let's watch the video and see if your explanation is right.</p>
-            <a class="btn-end"><i class="fas fa-magic"></i>Check It Out</a>
+            <p>Your chose the correct result. Now explain to your parter what you just learned.</p>
+            <a class="btn-continue" data-next="#scene-explain"><i class="fas fa-magic"></i>Continue</a>
           </div>
           <div id="scene-wrong-pizza" class="scene scene-feedback">
             <div class="icon icon-alert">
               <i class="far fa-times-circle"></i>
             </div>
             <h2>Incorrect</h2>
-            <p>You chose the incorrect result. Let's watch the video and find the right answer!</p>
-            <a class="btn-end"><i class="fas fa-magic"></i>Check It Out</a>
+            <p>You chose the incorrect result. Maybe you need to review your notes and the video before explaning to your partner.</p>
+            <a class="btn-continue" data-next="#scene-explain"><i class="fas fa-magic"></i>Continue</a>
           </div>
           <!-- pizza到这里结束，后面是practice -->
 
@@ -214,8 +215,8 @@
             <div class="icon">
               <i class="far fa-file-alt"></i>
             </div>
-            <h2>Practice Time!!!</h2>
-            <p>Let's do some practice to see if you master how microwave ovens work!</p>
+            <h2>Exam Time!!!</h2>
+            <p>Do the examination on your own to see if you master how microwave ovens work!</p>
             <a class="btn-continue" data-next="#scene-question-1"><i class="fas fa-arrow-circle-right"></i>Continue</a>
           </div>
 
@@ -343,7 +344,7 @@
               <div class="self-explanation">
                <p3 id="self-explanation-kc2">explanation explanation explanation</p3>
               </div>
-              <a class="icon-play">
+              <a class="icon-play" data-next="#scene-video2">
                 <i class="fas fa-play-circle"></i>
               </a>
             </div>
@@ -351,7 +352,7 @@
               <div class="self-explanation">
                <p3 id="self-explanation-kc3">explanation explanation explanation</p3>
               </div>
-              <a class="icon-play">
+              <a class="icon-play" data-next="#scene-video3">
                 <i class="fas fa-play-circle"></i>
               </a>
             </div>
@@ -359,7 +360,7 @@
               <div class="self-explanation">
                <p3 id="self-explanation-kc4">explanation explanation explanation</p3>
               </div>
-              <a class="icon-play">
+              <a class="icon-play" data-next="#scene-video4">
                 <i class="fas fa-play-circle"></i>
               </a>
             </div>
@@ -367,7 +368,7 @@
               <div class="self-explanation">
                <p3 id="self-explanation-kc5">explanation explanation explanation</p3>
               </div>
-              <a class="icon-play">
+              <a class="icon-play" data-next="#scene-video5">
                 <i class="fas fa-play-circle"></i>
               </a>
             </div>
@@ -379,35 +380,82 @@
             <h3>Now listen to your partner's explanation</h3>
             <p2>Pay attention to whether he/she has covered all the knowlege components below.</p2>
               <div class="kc">
-               <p3>knowledge component1</p3>
+               <p3>What is microwave?</p3>
               </div>
               <div class="kc">
-               <p3>knowledge component2</p3>
+               <p3>Why microwave oven essentially only heats the food?</p3>
               </div>
               <div class="kc">
-               <p3>knowledge component3</p3>
+               <p3>Microwave ovens deliver cooking power primarily to what material in the food?</p3>
               </div>
               <div class="kc">
-               <p3>knowledge component4</p3>
+               <p3>Why do containers not get as hot as food inside them?</p3>
               </div>
               <div class="kc">
-               <p3>knowledge component5</p3>
+               <p3>Why you shouldn't use metal plates or foils in microwave ovens?</p3>
               </div>
             <a class="btn-continue" data-next="#scene-title-practice"><i class="far fa-play-circle"></i>Got Them</a>
           </div>
 
           <!-- video piece 1 -->
           <div id="scene-video1" class="scene">
-            <div class="icon-close">
+            <a class="icon-close" data-next='#scene-explain'>
               <i class="fas fa-times-circle"></i>
-            </div>
+            </a>
             <h4>Part1</h4>
-            <iframe class="videopiece" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+            <iframe class="videopiece" src="https://youtube.com/embed/zt-CLmZhLiA"></iframe>
               <div class="kcexplain">
-               <p3>self explanation1</p3>
+               <p3 id="video-kc1">self explanation1</p3>
               </div>
           </div>
 
+          <!-- video piece 2 -->
+          <div id="scene-video2" class="scene">
+            <a class="icon-close" data-next='#scene-explain'>
+              <i class="fas fa-times-circle"></i>
+            </a>
+            <h4>Part2</h4>
+            <iframe class="videopiece" src="https://youtube.com/embed/v--baKovZ7M"></iframe>
+              <div class="kcexplain">
+               <p3 id="video-kc2">self explanation2</p3>
+              </div>
+          </div>
+
+          <!-- video piece 3 -->
+          <div id="scene-video3" class="scene">
+            <a class="icon-close" data-next='#scene-explain'>
+              <i class="fas fa-times-circle"></i>
+            </a>
+            <h4>Part3</h4>
+            <iframe class="videopiece" src="https://youtube.com/embed/H1-IOeu6j94"></iframe>
+              <div class="kcexplain">
+               <p3 id="video-kc3">self explanation3</p3>
+              </div>
+          </div>
+
+          <!-- video piece 4 -->
+          <div id="scene-video4" class="scene">
+            <a class="icon-close" data-next='#scene-explain'>
+              <i class="fas fa-times-circle"></i>
+            </a>
+            <h4>Part4</h4>
+            <iframe class="videopiece" src="https://youtube.com/embed/E9vG4JwjKWQ"></iframe>
+              <div class="kcexplain">
+               <p3 id="video-kc4">self explanation4</p3>
+              </div>
+          </div>
+
+          <!-- video piece 5 -->
+          <div id="scene-video5" class="scene">
+            <a class="icon-close" data-next='#scene-explain'>
+              <i class="fas fa-times-circle"></i>
+            </a>
+            <h4>Part5</h4>
+            <iframe class="videopiece" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+              <div class="kcexplain">
+               <p3 id="video-kc5">self explanation5</p3>
+              </div>
+          </div>
 
           <!-- 这里开始是前面每一kc的self-explanation -->
           <div id="scene-kc1" class="scene scene-answer">
