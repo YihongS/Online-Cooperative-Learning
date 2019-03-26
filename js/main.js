@@ -335,4 +335,90 @@ $(document).ready(function () {
     $('#video-kc5').text(hintKc1);
   })
 
+  // 下面是对分数计算的尝试
+
+  var currentChoice;
+  var optionChose;
+  var score = 0;
+  var countQ = 0;
+
+  var question2 = {
+    problemStatement:'Am I awesome?',
+    optionA:'Yes you are.',
+    optionB:'No you are not.',
+    optionC:'Are you kidding?',
+    optionD:'Hmmmmm.',
+    correctAnswer:'Yes you are.'
+  }
+
+  var question1 = {
+    problemStatement:'Microwaves are electric waves that could NOT penetrate?',
+    optionA:'A. Food',
+    optionB:'B. Ceramics',
+    optionC:'C. Glass',
+    optionD:'D. Metal',
+    correctAnswer:'D. Metal'
+  }
+
+  var question3 = {
+    problemStatement:'hahahaha',
+    optionA:'A. Fsss',
+    optionB:'B. cccc',
+    optionC:'C. Gddd',
+    optionD:'D. vvggg',
+    correctAnswer:'D. vvggg'
+  }
+
+  var questions = [question1,question2,question3];
+
+  $('.option').click(function(){
+    currentChoice = $(this).text();
+    console.log('current'+ currentChoice);
+  })
+  console.log(score);
+
+  $('#btn-continue-exam').click(function(){
+    optionChose = currentChoice;
+    console.log('final'+ optionChose);
+    if (optionChose == questions[countQ].correctAnswer){
+      score = score + 1;
+    }
+
+    countQ = countQ + 1;
+    console.log('score='+ score);
+
+    if(countQ == questions.length){
+      startScene('#scene-end');
+    }
+    else{
+    $('#problem-statement').text(questions[countQ].problemStatement);
+    $('#optionA').text(questions[countQ].optionA);
+    $('#optionB').text(questions[countQ].optionB);
+    $('#optionC').text(questions[countQ].optionC);
+    $('#optionD').text(questions[countQ].optionD);
+    }
+
+    // $('.option').css({
+    //   "display": "flex",
+    //   "border": "3px solid #FFFBF0",
+    //   "background": "#FFFBF0",
+    //   "cursor": "pointer",
+    //  })
+  })
+
+
+
+
+  // for (var i = question.length - 1; i >= 0; i--) {
+  //   question[i]
+  // }
+  // $.each(question,function(i,n))
+
+  // for(var i in question){
+  //   if (optionChose=question.correctAnswer) {
+  //     score = score+1;
+  //   }
+  // }
+
+
 })

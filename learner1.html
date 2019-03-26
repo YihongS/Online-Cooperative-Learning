@@ -219,26 +219,30 @@
             <p>Do the examination on your own to see if you master how microwave ovens work!</p>
             <a class="btn-continue" data-next="#scene-question-1"><i class="fas fa-arrow-circle-right"></i>Continue</a>
           </div>
-
+          
+          <!-- 一个题目页面 -->
           <div id="scene-question-1" class="scene scene-question">
             <h2>Question 1</h2>
-            <p>Microwaves are electric waves that could NOT penetrate?</p>
+            <p id="problem-statement">Microwaves are electric waves that could NOT penetrate?</p>
             <div class="gallery gallery-v select" data-target="#scene-question-1">
-              <div class="frame option" data-next="#scene-wrong-1">
+              <div id ="optionA" class="frame option" data-next="#scene-question-1">
                 <p>A. Food</p>
               </div>
-              <div class="frame option" data-next="#scene-wrong-1">
+              <div id ="optionB" class="frame option" data-next="#scene-question-1">
                 <p>B. Ceramics</p>
               </div>
-              <div class="frame option" data-next="#scene-wrong-1">
+              <div id ="optionC" class="frame option" data-next="#scene-question-1">
                 <p>C. Glass</p>
               </div>
-              <div class="frame option" data-next="#scene-correct-1">
+              <div id ="optionD" class="frame option" data-next="#scene-question-1">
                 <p>D. Metal</p>
               </div>
             </div>
-            <a class="btn-continue btn-disabled" data-next="#scene-wrong-1"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+            <a id="btn-continue-exam" class="btn-continue btn-disabled" data-next="#scene-question-1"><i class="fas fa-arrow-circle-right"></i>Continue</a>
           </div>
+          <!-- 到这里 -->
+
+
           <div id="scene-correct-1" class="scene scene-feedback">
             <div class="icon">
               <i class="far fa-check-circle"></i>
