@@ -342,15 +342,6 @@ $(document).ready(function () {
   var score = 0;
   var countQ = 0;
 
-  var question2 = {
-    problemStatement:'Am I awesome?',
-    optionA:'Yes you are.',
-    optionB:'No you are not.',
-    optionC:'Are you kidding?',
-    optionD:'Hmmmmm.',
-    correctAnswer:'Yes you are.'
-  }
-
   var question1 = {
     problemStatement:'Microwaves are electric waves that could NOT penetrate?',
     optionA:'A. Food',
@@ -360,16 +351,74 @@ $(document).ready(function () {
     correctAnswer:'D. Metal'
   }
 
-  var question3 = {
-    problemStatement:'hahahaha',
-    optionA:'A. Fsss',
-    optionB:'B. cccc',
-    optionC:'C. Gddd',
-    optionD:'D. vvggg',
-    correctAnswer:'D. vvggg'
+  var question2 = {
+    problemStatement:'How does the microwave heat the food?',
+    optionA:'A. Activating the water molecules in the food',
+    optionB:'B. Heat the air inside the microwave oven.',
+    optionC:'C. Heat the container of the food and then conduct the heat to the food',
+    optionD:'D. Activating all the molecules in the food',
+    correctAnswer:'A. Activating the water molecules in the food'
   }
 
-  var questions = [question1,question2,question3];
+
+
+  var question3 = {
+    problemStatement:'In what order does the microwave heat the food?',
+    optionA:'A. Heat the inside first then the outside',
+    optionB:'B. Heat the outside first then the inside',
+    optionC:'C. Heat all parts at the same time',
+    optionD:'D. Heat in a random order',
+    correctAnswer:'C. Heat all parts at the same time'
+  }
+
+  var question4 = {
+    problemStatement:'After heated in the microwave oven, the ceramics container will be',
+    optionA:'A. as hot as the food inside it',
+    optionB:'B. hotter than the food inside it',
+    optionC:'C. not as hot as the food inside it',
+    optionD:'D. Uncertain',
+    correctAnswer:'C. not as hot as the food inside it'
+  }
+
+
+  var question5 = {
+    problemStatement:'Which of the following containers can not be used in a microwave oven?',
+    optionA:'A. Plastic container',
+    optionB:'B. Metal container',
+    optionC:'C. Ceramics container',
+    optionD:'D. Glass container',
+    correctAnswer:'B. Metal container'
+  }
+
+  var question6 = {
+    problemStatement:'Which of the following materials will absorb microwaves most easily?',
+    optionA:'A. Metal',
+    optionB:'B. Water',
+    optionC:'C. Plastic',
+    optionD:'D. Glass',
+    correctAnswer:'B. Water'
+  }
+
+    var question7 = {
+    problemStatement:'How does the water molecule get energy when exposed to microwave oven?',
+    optionA:'A. The water molecule gets twisted back and forth and heated through friction',
+    optionB:'B. The container conducts heat to the water molecule',
+    optionC:'C. Other content in the food conducts heat to the water molecule',
+    optionD:'D. The air in the microwave oven conducts heat to the water molecule',
+    correctAnswer:'A. The water molecule gets twisted back and forth and heated through friction'
+  }
+
+    var question8 = {
+    problemStatement:'The food heated in a microwave oven',
+    optionA:'A. will be crispy and brown outside',
+    optionB:'B. will be crispy and brown inside',
+    optionC:'C. won’t get crispy and brown',
+    optionD:'D. will be crispy and brown from inside to outside',
+    correctAnswer:'C. won’t get crispy and brown'
+  }
+
+
+  var questions = [question1,question2,question3,question4, question5, question6, question7, question8];
 
   $('.option').click(function(){
     currentChoice = $(this).text();
@@ -389,8 +438,11 @@ $(document).ready(function () {
 
     if(countQ == questions.length){
       startScene('#scene-end');
+
+      $('#final-score').text(score);
     }
     else{
+    $('#exam-question').text('Questions '+(countQ+1));
     $('#problem-statement').text(questions[countQ].problemStatement);
     $('#optionA').text(questions[countQ].optionA);
     $('#optionB').text(questions[countQ].optionB);

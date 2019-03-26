@@ -35,9 +35,11 @@
               <i class="fas fa-glass-cheers"></i>
             </div>
             <h2>Congratulation!!!</h2>
-            <p>You have completed the course. Now you can show off to your friends how a microwave oven works!</p>
-            <a class="btn-share"><i class="fab fa-twitter"></i>Share</a>
-          </div>
+<!--             <p>You have completed the course. Now you can show off to your friends how a microwave oven works!</p> -->
+            <p >You got <span id="final-score">76 </span> points in total</p>
+            <a class="btn-continue" data-next=""><i class="fas fa-arrow-circle-right"></i>Feedback</a>
+<!--             <a class="btn-share"><i class="fab fa-twitter"></i>Share</a>
+ -->          </div>
 
 <!-- Experiment 1 -->
           <div id="scene-title-pasta" class="scene scene-title">
@@ -51,7 +53,7 @@
 
           <div id="scene-desc-pasta" class="scene scene-desc">
             <h2>Heating Pasta</h2>
-            <p>Your want to heat your pasta using the microwave oven. There are 2 conatiners of different material. One is a metal container, another is a ceramic container. Both of them contain your pasta. Let's put them in two microwave ovens and heat with the same amout of time and see what will happen.</p>
+            <p>Your want to heat your pasta using the microwave oven. There are 2 containers of different material. One is a metal container, another is a ceramic container. Both of them contain your pasta. Let's put them in two microwave ovens and heat with the same amout of time and see what will happen.</p>
             <div class="gallery">
               <div class="frame">
                 <img src="images/pasta-metal.png" alt="">
@@ -117,7 +119,9 @@
             </div>
 
             <h2>Correct!</h2>
-            <p>You chose the correct result. Now explain to your partner what you just leanred.</p>
+            <p>YYou chose the correct answer. Microwaves can be absorbed by ceramics whereas will be reflected by metals. That’s why the pasta in the ceramic container is hotter.
+Now explain what you just learned to your partner.
+</p>
             <a class="btn-continue" data-next="#scene-explain"><i class="fas fa-magic"></i>Continue</a>
           </div>
           <div id="scene-wrong-pasta" class="scene scene-feedback">
@@ -125,7 +129,9 @@
               <i class="far fa-times-circle"></i>
             </div>
             <h2>Incorrect</h2>
-            <p>You chose the incorrect result. Maybe you need to review your notes and the video before explaining to your partner.</p>
+            <p>You chose the wrong answer. Microwaves can be absorbed by ceramics whereas will be reflected by metals. That’s why the pasta in the ceramic container is hotter.
+You may need to review your notes or the video before explaining to your partner.
+</p>
             <a class="btn-continue" data-next="#scene-explain"><i class="fas fa-magic"></i>Continue</a>
           </div>
           <!-- btn-end就是之后没有continue了，最后一个页面 -->
@@ -219,10 +225,10 @@
             <p>Do the examination on your own to see if you master how microwave ovens work!</p>
             <a class="btn-continue" data-next="#scene-question-1"><i class="fas fa-arrow-circle-right"></i>Continue</a>
           </div>
-          
+
           <!-- 一个题目页面 -->
           <div id="scene-question-1" class="scene scene-question">
-            <h2>Question 1</h2>
+            <h2 id="exam-question">Question 1</h2>
             <p id="problem-statement">Microwaves are electric waves that could NOT penetrate?</p>
             <div class="gallery gallery-v select" data-target="#scene-question-1">
               <div id ="optionA" class="frame option" data-next="#scene-question-1">
