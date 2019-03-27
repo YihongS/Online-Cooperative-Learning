@@ -243,6 +243,7 @@ $(document).ready(function () {
       continueScene(this);
     }
   })
+
   $('.btn-end').click(function () {
     endScene(this);
   })
@@ -361,7 +362,6 @@ $(document).ready(function () {
   }
 
 
-
   var question3 = {
     problemStatement:'In what order does the microwave heat the food?',
     optionA:'A. Heat the inside first then the outside',
@@ -420,13 +420,15 @@ $(document).ready(function () {
 
   var questions = [question1,question2,question3,question4, question5, question6, question7, question8];
 
-  $('.option').click(function(){
+  $('.option-q').click(function(){
     currentChoice = $(this).text();
     console.log('current'+ currentChoice);
+    var $btn = $(this).parent('.select').parent('.scene').find('.btn-continue-q');
+    $btn.removeClass('btn-disabled');
   })
   console.log(score);
 
-  $('#btn-continue-exam').click(function(){
+  $('.btn-continue-q').click(function(){
     optionChose = currentChoice;
     console.log('final'+ optionChose);
     if (optionChose == questions[countQ].correctAnswer){
@@ -442,12 +444,17 @@ $(document).ready(function () {
       $('#final-score').text(score);
     }
     else{
-    $('#exam-question').text('Questions '+(countQ+1));
-    $('#problem-statement').text(questions[countQ].problemStatement);
-    $('#optionA').text(questions[countQ].optionA);
-    $('#optionB').text(questions[countQ].optionB);
-    $('#optionC').text(questions[countQ].optionC);
-    $('#optionD').text(questions[countQ].optionD);
+      if (!$(this).hasClass('btn-disabled')) {
+        $(this).parent('.scene').find('.gallery .option').removeClass('option-selected');
+        var $btn = $(this).parent('.scene').find('.btn-continue-q');
+        $btn.addClass('btn-disabled');
+        $('#exam-question').text('Questions '+(countQ+1));
+        $('#problem-statement').text(questions[countQ].problemStatement);
+        $('#optionA p').text(questions[countQ].optionA);
+        $('#optionB p').text(questions[countQ].optionB);
+        $('#optionC p').text(questions[countQ].optionC);
+        $('#optionD p').text(questions[countQ].optionD);
+      }
     }
 
     // $('.option').css({
