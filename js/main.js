@@ -431,15 +431,24 @@ $(document).ready(function () {
   $('.btn-continue-q').click(function(){
     optionChose = currentChoice;
     console.log('final'+ optionChose);
-    if (optionChose == questions[countQ].correctAnswer){
+    console.log('optionChose='+optionChose);
+    console.log('correctAnswer='+questions[countQ].correctAnswer);
+    if (optionChose == questions[countQ].correctAnswer.text()){
       score = score + 1;
+      
+      console.log('score='+ score);
+    }
+    else{
+      console.log("!===")
     }
 
+
     countQ = countQ + 1;
+    console.log('countQ='+countQ);
     console.log('score='+ score);
 
     if(countQ == questions.length){
-      startScene('#scene-end');
+      startScene('#scene-feedback');
 
       $('#final-score').text(score);
     }
@@ -465,19 +474,23 @@ $(document).ready(function () {
     //  })
   })
 
+  var countF = 0
+  $('#btn-continue-feedback').click(function(){
+    countF += 1;
+    console.log('feedbackcount='+ countF);
 
-
-
-  // for (var i = question.length - 1; i >= 0; i--) {
-  //   question[i]
-  // }
-  // $.each(question,function(i,n))
-
-  // for(var i in question){
-  //   if (optionChose=question.correctAnswer) {
-  //     score = score+1;
-  //   }
-  // }
+    if(countF == feedbacks.length){
+      startScene('#scene-end');
+    }
+    else{
+      if(questionsCorrect[countF]){
+        $('#feedback-text').text(feedbacks[countF][0])
+      }
+      else{
+        $('#feedback-text').text(feedbacks[countF][1])
+      }
+    }
+  })
 
 
 })
