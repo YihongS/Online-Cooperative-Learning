@@ -419,9 +419,14 @@ $(document).ready(function () {
 
 
   var questions = [question1,question2,question3,question4, question5, question6, question7, question8];
+  var questionsCorrect = [];
+  var feedbacks = [["correct1lilili","incorrect1ppp"],["correct2hahaha","wrong2aaa"],["correct3hahaha","incorrect3jjj"]]
+  
+  // 改了这一行
+  var optionsChoseArray = [];
 
   $('.option-q').click(function(){
-    currentChoice = $(this).text();
+    currentChoice = $(this).children().text();
     console.log('current'+ currentChoice);
     var $btn = $(this).parent('.select').parent('.scene').find('.btn-continue-q');
     $btn.removeClass('btn-disabled');
@@ -430,27 +435,94 @@ $(document).ready(function () {
 
   $('.btn-continue-q').click(function(){
     optionChose = currentChoice;
+    // 改了这一行
+    optionsChoseArray[countQ] = optionChose;
     console.log('final'+ optionChose);
-    console.log('optionChose='+optionChose);
-    console.log('correctAnswer='+questions[countQ].correctAnswer);
-    if (optionChose == questions[countQ].correctAnswer.text()){
+    console.log('optionChose='+ optionChose);
+    console.log('countQ='+countQ);
+    if (optionChose == questions[countQ].correctAnswer && countQ <= 7){
       score = score + 1;
-      
+      questionsCorrect[countQ] = true;
       console.log('score='+ score);
     }
     else{
       console.log("!===")
+      questionsCorrect[countQ] = false;
     }
 
+    if(countQ < 7){
+      countQ = countQ + 1;
+      console.log('countQ='+countQ);
+      console.log('score='+ score);
+      console.log(questions.length)
+    }
 
-    countQ = countQ + 1;
-    console.log('countQ='+countQ);
-    console.log('score='+ score);
-
-    if(countQ == questions.length){
-      startScene('#scene-feedback');
-
+    // End of question and go to feedbacks
+    // if(countQ == questions.length){
+      // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    if(countQ == questions.length-1){
+      var countF = countQ - 7;
+      console.log('countF='+countF);
       $('#final-score').text(score);
+      // 这里需要改成scene-score或者scene-feedback什么的
+      startScene('#scene-question-1');
+      $('#exam-question').text('Questions '+(countF+1));
+      $('#problem-statement').text(questions[countF].problemStatement);
+      $('#optionA p').text(questions[countF].optionA);
+      $('#optionB p').text(questions[countF].optionB);
+      $('#optionC p').text(questions[countF].optionC);
+      $('#optionD p').text(questions[countF].optionD);
+      $('.option').attr("disabled","true");
+      console.log('disabled success')
+      
+
+      // remove btn-disabled
+      $('.btn-continue-q').removeClass('btn-disabled')
+      // remove css .option-selected
+      $('.option').removeClass('option-selected')
+
+      // Change the test scene
+      // Check which option is the correct option
+      Object.keys(questions[countF]).forEach(function(key){
+        console.log(key,questions[countF][key]);
+        if (questions[countF][key] == questions[countF].correctAnswer) {
+          // $('.gallery').find('.option')
+          // questions[countF][key].search
+          // !!!!!!!!!!!!IMPORTANT
+          $("#" + key).addClass('option-border-green');
+          $("#" + key).css({"border":"5px solid green"});
+          // css({"background-color","red"})
+          // questions[countF][key].addClass('option-border-green')
+          console.log('green border has been added')
+          console.log(questions[countF][key]+'is the correct answer')
+        } 
+          // if the option is not the correct answer, judge whether it is the chosen answer
+
+      });
+
+      
+      $("p:contains("+optionsChoseArray[countF]+")").parent().css({"border": "5px solid red"});
+
+      
+      // the first feedback
+      if(questionsCorrect[countF]){
+        $('#feedback-text').text(feedbacks[countF][0])
+        console.log('judge correct'+feedbacks[countF][0])
+
+      }
+      else{
+        $('#feedback-text').text(feedbacks[countF][1])
+        // !!!!!!!!!!!!IMPORTANT
+        // optionsChoseArray[countF].addClass('option-border-red')
+
+      
+
+        // change border to red
+        console.log('judge incorrect'+feedbacks[countF][1])
+      }
+      // add countF
+      countF += 1;
+      console.log('countF='+countF);
     }
     else{
       if (!$(this).hasClass('btn-disabled')) {
@@ -465,32 +537,33 @@ $(document).ready(function () {
         $('#optionD p').text(questions[countQ].optionD);
       }
     }
-
-    // $('.option').css({
-    //   "display": "flex",
-    //   "border": "3px solid #FFFBF0",
-    //   "background": "#FFFBF0",
-    //   "cursor": "pointer",
-    //  })
+    
   })
 
-  var countF = 0
+
   $('#btn-continue-feedback').click(function(){
     countF += 1;
     console.log('feedbackcount='+ countF);
 
     if(countF == feedbacks.length){
       startScene('#scene-end');
+      console.log('#scene-end');
     }
     else{
+      console.log("not end")
       if(questionsCorrect[countF]){
         $('#feedback-text').text(feedbacks[countF][0])
+        console.log('judge correct'+feedbacks[countF][0])
       }
       else{
         $('#feedback-text').text(feedbacks[countF][1])
+        console.log('judge incorrect'+feedbacks[countF][1])
       }
     }
   })
+
+  // feedback页面的其他选项：
+  // 哪一道题
 
 
 })

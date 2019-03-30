@@ -40,9 +40,10 @@
             <a class="btn-continue" data-next="#scene-feedback"><i class="fas fa-arrow-circle-right"></i>Feedback</a>
 <!--             <a class="btn-share"><i class="fab fa-twitter"></i>Share</a>
  -->          </div>
+
           <div id = "scene-feedback" class="scene">
-            <p id="feedback-text">feedbacktext</p> 
-            <a class="btn-continue-q" data-next="#scene-feedback"><i class="fas fa-arrow-circle-right"></i>next</a>
+            <p id = "feedback-text">feedbacktext</p> 
+            <a id ="btn-continue-feedback" data-next="#scene-feedback"><i class="fas fa-arrow-circle-right"></i>next</a>
           </div>
 
 <!-- Experiment 1 -->
@@ -235,18 +236,18 @@ You may need to review your notes or the video before explaining to your partner
             <h2 id="exam-question">Question 1</h2>
             <p id="problem-statement">Microwaves are electric waves that could NOT penetrate?</p>
             <div class="gallery gallery-v select" data-target="#scene-question-1">
-              <div id ="optionA" class="frame option option-q" data-next="#scene-question-1">
+              <button id ="optionA" class="frame option option-q" data-next="#scene-question-1">
                 <p>A. Food</p>
-              </div>
-              <div id ="optionB" class="frame option option-q" data-next="#scene-question-1">
+              </button>
+              <button id ="optionB" class="frame option option-q" data-next="#scene-question-1">
                 <p>B. Ceramics</p>
-              </div>
-              <div id ="optionC" class="frame option option-q" data-next="#scene-question-1">
+              </button>
+              <button id ="optionC" class="frame option option-q" data-next="#scene-question-1">
                 <p>C. Glass</p>
-              </div>
-              <div id ="optionD" class="frame option option-q" data-next="#scene-question-1">
+              </button>
+              <button id ="optionD" class="frame option option-q" data-next="#scene-question-1">
                 <p>D. Metal</p>
-              </div>
+              </button>
             </div>
             <a id="btn-continue-exam" class="btn-continue-q btn-disabled" data-next="#scene-question-1"><i class="fas fa-arrow-circle-right"></i>Continue</a>
           </div>

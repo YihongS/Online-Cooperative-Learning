@@ -580,4 +580,15 @@ footer {
 }
 */
 
+.option-border-green{
+  border-color: green;
+  border-width: 10px;
+  border: 10px solid green;
+}
+.option-border-red{
+  border-color: red;
+  border-width: 10px;
+}
+
+
 
