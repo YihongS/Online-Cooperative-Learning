@@ -122,7 +122,7 @@ function continueScene(el) {
       if (next.includes('scene-timer')) {//播放声音
         document.getElementById('sound').play();
         // !!!!!!!!!!important!
-        setTimeout(continueScene, 4, $(next).find('.btn-continue'));
+        setTimeout(continueScene, 4000, $(next).find('.btn-continue'));
       } else if (next.includes('scene-end')) {
         document.getElementById('ending').play();
       }
@@ -152,7 +152,6 @@ function endScene(el) {
 }
 
 // 我加的
-
 function triggerScenePasta() {
   pauseVideo();
   showBoard();
@@ -224,9 +223,6 @@ function triggerSceneKc5(){
   startScene('#scene-kc5');
 }
 
-
-
-
 // 后面都不用改了
 $(document).ready(function () {
   // showBoard();
@@ -290,16 +286,11 @@ $(document).ready(function () {
   })
 
   // 下面是对local storage的尝试
-  // var selfExplanation = document.getElementById('#input-answer-kc1');
   var selfExplanation = '';
   $('#btn-continue-kc1').click(function(){
     selfExplanationKc1 = $('#input-answer-kc1').val();
-    // console.log(selfExplanation);
     localStorage.setItem('selfExplanationKc1',JSON.stringify(selfExplanationKc1));
-    // console.log(localStorage.getItem('selfExplanation'));
     var hintKc1 = JSON.parse(localStorage.getItem('selfExplanationKc1'));
-    // console.log("HINT="+hintKc1);
-    // document.getElementById('self-explanation-kc1').innerHTML = hintKc1;
     $('#self-explanation-kc1').text(hintKc1);
     $('#video-kc1').text(hintKc1);
   })
@@ -456,20 +447,13 @@ $(document).ready(function () {
   "Incorrect. In a conventional oven, heats needs to migrate by conduction from the outside of the food toward the middle. Hot, dry air on the outside evaporates moisture, so the outside could be crispy and brown while the inside is still moist. Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would with other forms of cooking. "],
 
   ["Correct. In a conventional oven, heats needs to migrate by conduction from the outside of the food toward the middle. Hot, dry air on the outside evaporates moisture, so the outside could be crispy and brown while the inside is still moist. Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would with other forms of cooking.", 
-  "Incorrect. In a conventional oven, heats needs to migrate by conduction from the outside of the food toward the middle. Hot, dry air on the outside evaporates moisture, so the outside could be crispy and brown while the inside is still moist. Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would with other forms of cooking. "],
-
-  ["Correct. In a conventional oven, heats needs to migrate by conduction from the outside of the food toward the middle. Hot, dry air on the outside evaporates moisture, so the outside could be crispy and brown while the inside is still moist. Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would with other forms of cooking.", 
   "Incorrect. In a conventional oven, heats needs to migrate by conduction from the outside of the food toward the middle. Hot, dry air on the outside evaporates moisture, so the outside could be crispy and brown while the inside is still moist. Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would with other forms of cooking. "]
 
  ]
 
-
-
-  
   // 改了这一行
   var optionsChoseArray = [];
   
-
   $('.option-q').click(function(){
     currentChoice = $(this).children().text();
     console.log('current'+ currentChoice);
@@ -503,16 +487,11 @@ $(document).ready(function () {
     }
 
     // End of question and go to feedbacks
-    // if(countQ == questions.length){
-      // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     if(countQ == questions.length){
       // var countF = countQ- 7;
       console.log('countF='+countF);
       $('#final-score').text(score);
-
-      // 这里需要改成scene-score或者scene-feedback什么的
         // startScene('#scene-question-1');
-
         if (countF > 7) {
         console.log('where is countF='+countF)
         startScene('#scene-share');
@@ -585,7 +564,6 @@ $(document).ready(function () {
 
   })
 
-
   $('#btn-continue-feedback').click(function(){
     // countF += 1;
     console.log('feedbackcount='+ countF);
@@ -606,9 +584,6 @@ $(document).ready(function () {
       }
     }
   })
-
-  // feedback页面的其他选项：
-  // 哪一道题
 
 
 })
