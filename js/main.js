@@ -342,6 +342,7 @@ $(document).ready(function () {
   var optionChose;
   var score = 0;
   var countQ = 0;
+  var countF = 0;
 
   var question1 = {
     problemStatement:'Microwaves are electric waves that could NOT penetrate?',
@@ -451,10 +452,12 @@ $(document).ready(function () {
   ["Correct. When exposed to microwaves, the positively charged end of the water molecule tries to align itself with the microwave's electric field while the negatively charged end points the other way. But because the field reverses 2.5 billion times a second, the water molecules are being twisted back and forth rapidly and they rub into each other, which will create friction and produce heat.", 
     "Incorrect. When exposed to microwaves, the positively charged end of the water molecule tries to align itself with the microwave's electric field while the negatively charged end points the other way. But because the field reverses 2.5 billion times a second, the water molecules are being twisted back and forth rapidly and they rub into each other, which will create friction and produce heat."],   
 
-  ["Correct.  In a conventional oven, heats needs to migrate by conduction from the outside of the food toward the middle. Hot, dry air on the outside evaporates moisture, so the outside could be crispy and brown while the inside is still moist. Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would with other forms of cooking.", 
-  "Incorrect.  In a conventional oven, heats needs to migrate by conduction from the outside of the food toward the middle. Hot, dry air on the outside evaporates moisture, so the outside could be crispy and brown while the inside is still moist. Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would with other forms of cooking. "]
+  ["Correct. In a conventional oven, heats needs to migrate by conduction from the outside of the food toward the middle. Hot, dry air on the outside evaporates moisture, so the outside could be crispy and brown while the inside is still moist. Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would with other forms of cooking.", 
+  "Incorrect. In a conventional oven, heats needs to migrate by conduction from the outside of the food toward the middle. Hot, dry air on the outside evaporates moisture, so the outside could be crispy and brown while the inside is still moist. Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would with other forms of cooking. "]
 
-  ['.','.']
+  ["Correct. In a conventional oven, heats needs to migrate by conduction from the outside of the food toward the middle. Hot, dry air on the outside evaporates moisture, so the outside could be crispy and brown while the inside is still moist. Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would with other forms of cooking.", 
+  "Incorrect. In a conventional oven, heats needs to migrate by conduction from the outside of the food toward the middle. Hot, dry air on the outside evaporates moisture, so the outside could be crispy and brown while the inside is still moist. Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would with other forms of cooking. "]
+
  ]
 
 
@@ -462,7 +465,7 @@ $(document).ready(function () {
   
   // 改了这一行
   var optionsChoseArray = [];
-  var countF = 0;
+  
 
   $('.option-q').click(function(){
     currentChoice = $(this).children().text();
@@ -505,81 +508,77 @@ $(document).ready(function () {
       $('#final-score').text(score);
 
       // 这里需要改成scene-score或者scene-feedback什么的
-      startScene('#scene-question-1');
-
-      $('#btn-continue-q').addClass("btn-continue-feedback");
-      $('#exam-question').text('Questions '+(countF+1));
-      $('#problem-statement').text(questions[countF].problemStatement);
-      $('#optionA p').text(questions[countF].optionA);
-      $('#optionB p').text(questions[countF].optionB);
-      $('#optionC p').text(questions[countF].optionC);
-      $('#optionD p').text(questions[countF].optionD);
-      $('.option').attr("disabled","true");
-      console.log('disabled success')
-      if (countF == 0) {
-        $('#optionD').parent().append("<p id='feedback-text'>Appended feedback text</p>");
-      }
       
 
-      // remove btn-disabled
-      $('.btn-continue-q').removeClass('btn-disabled')
-      // remove css .option-selected
-      $('.option').removeClass('option-selected')
-      $('.option').css({"border": "none"});
+        startScene('#scene-question-1');
+        if (countF > 7) {
+        console.log('where is countF='+countF)
+        startScene('#scene-share');
+        }
 
-      // Change the test scene
-      $("p:contains("+optionsChoseArray[countF]+")").parent().css({"border": "5px solid red"});
-      // Check which option is the correct option
-      Object.keys(questions[countF]).forEach(function(key){
-        console.log(key,questions[countF][key]);
-        if (questions[countF][key] == questions[countF].correctAnswer) {
-          // $('.gallery').find('.option')
-          // questions[countF][key].search
-          // !!!!!!!!!!!!IMPORTANT
-          $("#" + key).addClass('option-border-green');
-          $("#" + key).css({"border":"5px solid green"});
-          // css({"background-color","red"})
-          // questions[countF][key].addClass('option-border-green')
-          console.log('green border has been added')
-          console.log(questions[countF][key]+'is the correct answer')
-        } 
-          // if the option is not the correct answer, judge whether it is the chosen answer
-      });
+        $('#btn-continue-q').addClass("btn-continue-feedback");
+        $('#exam-question').text('Questions '+(countF+1)+' feedback');
+        $('#problem-statement').text(questions[countF].problemStatement);
+        $('#optionA p').text(questions[countF].optionA);
+        $('#optionB p').text(questions[countF].optionB);
+        $('#optionC p').text(questions[countF].optionC);
+        $('#optionD p').text(questions[countF].optionD);
+        $('.option').attr("disabled","true");
+        console.log('disabled success')
+        if (countF == 0) {
+          $('#optionD').parent().append("<p id='feedback-text'>Appended feedback text</p>");
+        }
+        
+        // remove btn-disabled
+        $('.btn-continue-q').removeClass('btn-disabled')
+        // remove css .option-selected
+        $('.option').removeClass('option-selected')
+        $('.option').css({"border": "none"});
 
-      // the first feedback
-      if(questionsCorrect[countF]){
-        $('.gallery #feedback-text').text(feedbacks[countF][0]);
-        console.log('judge correct'+feedbacks[countF][0]);
+        // Change the test scene
+        $("p:contains("+optionsChoseArray[countF]+")").parent().css({"border": "5px solid red"});
+        // Check which option is the correct option
+        Object.keys(questions[countF]).forEach(function(key){
+          console.log(key,questions[countF][key]);
+          if (questions[countF][key] == questions[countF].correctAnswer) {
+            $("#" + key).addClass('option-border-green');
+            $("#" + key).css({"border":"5px solid green"});
+            console.log('green border has been added')
+            console.log(questions[countF][key]+'is the correct answer')
+          } 
+        });
 
+        // the feedback
+        if(questionsCorrect[countF]){
+          console.log('where is countF='+countF)
+          $('.gallery #feedback-text').text(feedbacks[countF][0]);
+          console.log('judge correct'+feedbacks[countF][0]);
+
+        }
+        else{
+          console.log('where is countF='+countF)
+          $('.gallery #feedback-text').text(feedbacks[countF][1]);
+          console.log('judge incorrect'+feedbacks[countF][1])
+        }
+        // add countF
+        countF += 1;
+        console.log('countF='+countF);
+
+        
       }
       else{
-        $('.gallery #feedback-text').text(feedbacks[countF][1]);
-        // !!!!!!!!!!!!IMPORTANT
-        // optionsChoseArray[countF].addClass('option-border-red')
-        // change border to red
-        console.log('judge incorrect'+feedbacks[countF][1])
+        if (!$(this).hasClass('btn-disabled')) {
+          $(this).parent('.scene').find('.gallery .option').removeClass('option-selected');
+          var $btn = $(this).parent('.scene').find('.btn-continue-q');
+          $btn.addClass('btn-disabled');
+          $('#exam-question').text('Questions '+(countQ+1));
+          $('#problem-statement').text(questions[countQ].problemStatement);
+          $('#optionA p').text(questions[countQ].optionA);
+          $('#optionB p').text(questions[countQ].optionB);
+          $('#optionC p').text(questions[countQ].optionC);
+          $('#optionD p').text(questions[countQ].optionD);
+        }
       }
-      // add countF
-      countF += 1;
-      console.log('countF='+countF);
-
-      if (countF == 9) {
-        startScene('#scene-share');
-      }
-    }
-    else{
-      if (!$(this).hasClass('btn-disabled')) {
-        $(this).parent('.scene').find('.gallery .option').removeClass('option-selected');
-        var $btn = $(this).parent('.scene').find('.btn-continue-q');
-        $btn.addClass('btn-disabled');
-        $('#exam-question').text('Questions '+(countQ+1));
-        $('#problem-statement').text(questions[countQ].problemStatement);
-        $('#optionA p').text(questions[countQ].optionA);
-        $('#optionB p').text(questions[countQ].optionB);
-        $('#optionC p').text(questions[countQ].optionC);
-        $('#optionD p').text(questions[countQ].optionD);
-      }
-    }
 
   })
 
