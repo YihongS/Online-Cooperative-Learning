@@ -12,7 +12,7 @@ function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
     height: '640',
     width: '900',
-    videoId: 'iP3fFSoAsj4',
+    videoId: 'gUgz309MyEc',
     events: {
       'onReady': onPlayerReady,
       'onStateChange': onPlayerStateChange
@@ -48,27 +48,27 @@ function onProgress(currentTime) {
   // }
 
   // 下面是我复制的
-  if(currentTime >= 47 && currentTime < 48 && !showingBoard && !justShowedBoard) {
+  if(currentTime >= 52.5 && currentTime < 53.5 && !showingBoard && !justShowedBoard) {
     console.log("Trigger");
     triggerSceneKc1();//这里要有括号
   }
 
-  if(currentTime >= 72.6 && currentTime < 73.6 && !showingBoard && !justShowedBoard) {
+  if(currentTime >= 70 && currentTime < 71 && !showingBoard && !justShowedBoard) {
     console.log("Trigger");
     triggerSceneKc2();//这里要有括号
   }
 
-  if(currentTime >= 81.8 && currentTime < 82.8 && !showingBoard && !justShowedBoard) {
+  if(currentTime >= 94.8 && currentTime < 95.8 && !showingBoard && !justShowedBoard) {
     console.log("Trigger");
     triggerSceneKc3();//这里要有括号
   }
 
-  if(currentTime >= 91.5 && currentTime < 92.5 && !showingBoard && !justShowedBoard) {
+  if(currentTime >= 113.8 && currentTime < 114.8 && !showingBoard && !justShowedBoard) {
     console.log("Trigger");
     triggerSceneKc4();//这里要有括号
   }
 
-  if(currentTime >= 101 && currentTime < 102 && !showingBoard && !justShowedBoard) {
+  if(currentTime >= 123.5 && currentTime < 124.5 && !showingBoard && !justShowedBoard) {
     console.log("Trigger");
     triggerSceneKc5();//这里要有括号
   }
@@ -84,7 +84,7 @@ function onPlayerStateChange(event) {
     // setTimeout(triggerScenePizza, 6000);
     done = true;
   } else if (event.data == YT.PlayerState.ENDED) {
-    setTimeout(triggerScenePasta, 0); // 结尾
+    setTimeout(triggerScenePizza, 0); // 结尾
   }
 }
 function playVideo() {
@@ -153,10 +153,10 @@ function endScene(el) {
 
 // 我加的
 
-function triggerScenePasta() {
+function triggerScenePizza() {
   pauseVideo();
   showBoard();
-  startScene('#scene-title-pasta');
+  startScene('#scene-title-pizza');
 }
 function triggerSceneExplain() {
   // pauseVideo();
