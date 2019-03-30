@@ -444,21 +444,16 @@ $(document).ready(function () {
   "Incorrect. Because the field reverses 2.5 billion times a second, the water molecules are being twisted back and forth when exposed to the microwave’s electric field, rapidly and they rub into each other, which will create friction and produce heat. "],
 
   ["Correct. Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would with other forms of cooking. ",
-  "Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would with other forms of cooking. "],
+  "Incorrect.Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would with other forms of cooking. "],
 
-<<<<<<< HEAD
   ["Correct. In a conventional oven, heats needs to migrate by conduction from the outside of the food toward the middle. Hot, dry air on the outside evaporates moisture, so the outside could be crispy and brown while the inside is still moist. Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would with other forms of cooking.",
   "Incorrect. In a conventional oven, heats needs to migrate by conduction from the outside of the food toward the middle. Hot, dry air on the outside evaporates moisture, so the outside could be crispy and brown while the inside is still moist. Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would with other forms of cooking. "],
 
   ["Correct. In a conventional oven, heats needs to migrate by conduction from the outside of the food toward the middle. Hot, dry air on the outside evaporates moisture, so the outside could be crispy and brown while the inside is still moist. Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would with other forms of cooking.",
-=======
-  ["Correct. In a conventional oven, heats needs to migrate by conduction from the outside of the food toward the middle. Hot, dry air on the outside evaporates moisture, so the outside could be crispy and brown while the inside is still moist. Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would with other forms of cooking.", 
->>>>>>> ff9d0b5f415039865e21c5dca2b57f9757366ca1
   "Incorrect. In a conventional oven, heats needs to migrate by conduction from the outside of the food toward the middle. Hot, dry air on the outside evaporates moisture, so the outside could be crispy and brown while the inside is still moist. Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would with other forms of cooking. "]
 
  ]
 
-<<<<<<< HEAD
 
 
 
@@ -466,11 +461,10 @@ $(document).ready(function () {
   var optionsChoseArray = [];
 
 
-=======
+
   // 改了这一行
   var optionsChoseArray = [];
-  
->>>>>>> ff9d0b5f415039865e21c5dca2b57f9757366ca1
+
   $('.option-q').click(function(){
     currentChoice = $(this).children().text();
     console.log('current'+ currentChoice);
