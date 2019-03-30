@@ -425,6 +425,7 @@ $(document).ready(function () {
   // 改了这一行
   var optionsChoseArray = [];
 
+
   $('.option-q').click(function(){
     currentChoice = $(this).children().text();
     console.log('current'+ currentChoice);
@@ -440,7 +441,7 @@ $(document).ready(function () {
     console.log('final'+ optionChose);
     console.log('optionChose='+ optionChose);
     console.log('countQ='+countQ);
-    if (optionChose == questions[countQ].correctAnswer && countQ <= 7){
+    if (optionChose == questions[countQ].correctAnswer){
       score = score + 1;
       questionsCorrect[countQ] = true;
       console.log('score='+ score);
@@ -450,28 +451,28 @@ $(document).ready(function () {
       questionsCorrect[countQ] = false;
     }
 
-    if(countQ < 7){
+    // if(countQ < 7){
       countQ = countQ + 1;
       console.log('countQ='+countQ);
       console.log('score='+ score);
       console.log(questions.length)
-    }
+    // }
 
     // End of question and go to feedbacks
     // if(countQ == questions.length){
       // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     if(countQ == questions.length-1){
-      var countF = countQ - 7;
-      console.log('countF='+countF);
+      // var countF = countQ-7;
+      console.log('countF='+countQ-7);
       $('#final-score').text(score);
       // 这里需要改成scene-score或者scene-feedback什么的
       startScene('#scene-question-1');
-      $('#exam-question').text('Questions '+(countF+1));
-      $('#problem-statement').text(questions[countF].problemStatement);
-      $('#optionA p').text(questions[countF].optionA);
-      $('#optionB p').text(questions[countF].optionB);
-      $('#optionC p').text(questions[countF].optionC);
-      $('#optionD p').text(questions[countF].optionD);
+      $('#exam-question').text('Questions '+(countQ-6));
+      $('#problem-statement').text(questions[countQ-7].problemStatement);
+      $('#optionA p').text(questions[countQ-7].optionA);
+      $('#optionB p').text(questions[countQ-7].optionB);
+      $('#optionC p').text(questions[countQ-7].optionC);
+      $('#optionD p').text(questions[countQ-7].optionD);
       $('.option').attr("disabled","true");
       console.log('disabled success')
       
@@ -483,9 +484,9 @@ $(document).ready(function () {
 
       // Change the test scene
       // Check which option is the correct option
-      Object.keys(questions[countF]).forEach(function(key){
-        console.log(key,questions[countF][key]);
-        if (questions[countF][key] == questions[countF].correctAnswer) {
+      Object.keys(questions[countQ-7]).forEach(function(key){
+        console.log(key,questions[countQ-7][key]);
+        if (questions[countQ-7][key] == questions[countQ-7].correctAnswer) {
           // $('.gallery').find('.option')
           // questions[countF][key].search
           // !!!!!!!!!!!!IMPORTANT
@@ -494,50 +495,52 @@ $(document).ready(function () {
           // css({"background-color","red"})
           // questions[countF][key].addClass('option-border-green')
           console.log('green border has been added')
-          console.log(questions[countF][key]+'is the correct answer')
+          console.log(questions[countQ-7][key]+'is the correct answer')
         } 
           // if the option is not the correct answer, judge whether it is the chosen answer
 
       });
 
       
-      $("p:contains("+optionsChoseArray[countF]+")").parent().css({"border": "5px solid red"});
+      $("p:contains("+optionsChoseArray[countQ-7]+")").parent().css({"border": "5px solid red"});
 
       
       // the first feedback
-      if(questionsCorrect[countF]){
-        $('#feedback-text').text(feedbacks[countF][0])
-        console.log('judge correct'+feedbacks[countF][0])
+      if(questionsCorrect[countQ-7]){
+        $('#feedback-text').text(feedbacks[countQ-7][0])
+        console.log('judge correct'+feedbacks[countQ-7][0])
 
       }
       else{
-        $('#feedback-text').text(feedbacks[countF][1])
+        $('#feedback-text').text(feedbacks[countQ-7][1])
         // !!!!!!!!!!!!IMPORTANT
         // optionsChoseArray[countF].addClass('option-border-red')
 
       
 
         // change border to red
-        console.log('judge incorrect'+feedbacks[countF][1])
+        console.log('judge incorrect'+feedbacks[countQ-7][1])
       }
       // add countF
-      countF += 1;
-      console.log('countF='+countF);
+      // countQ += 1;
+      console.log('countF='+(countQ-7));
     }
     else{
       if (!$(this).hasClass('btn-disabled')) {
         $(this).parent('.scene').find('.gallery .option').removeClass('option-selected');
         var $btn = $(this).parent('.scene').find('.btn-continue-q');
         $btn.addClass('btn-disabled');
-        $('#exam-question').text('Questions '+(countQ+1));
-        $('#problem-statement').text(questions[countQ].problemStatement);
-        $('#optionA p').text(questions[countQ].optionA);
-        $('#optionB p').text(questions[countQ].optionB);
-        $('#optionC p').text(questions[countQ].optionC);
-        $('#optionD p').text(questions[countQ].optionD);
+        if (countQ<7) {
+          $('#exam-question').text('Questions '+(countQ+1));
+          $('#problem-statement').text(questions[countQ].problemStatement);
+          $('#optionA p').text(questions[countQ].optionA);
+          $('#optionB p').text(questions[countQ].optionB);
+          $('#optionC p').text(questions[countQ].optionC);
+          $('#optionD p').text(questions[countQ].optionD);
+        }
       }
     }
-    
+
   })
 
 
