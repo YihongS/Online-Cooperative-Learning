@@ -366,7 +366,7 @@ main {
 }
 
 .scene .gallery-v .frame {
-  width: 80%;
+  width: 90%;
   margin: 3px 0;
 }
 
@@ -590,5 +590,12 @@ footer {
   border-width: 10px;
 }
 
+#feedback-text{
+  width: 700px;
+  margin-top: 24px;
+}
 
+#problem-statement{
+  width: 700px;
+}
 
