@@ -100,7 +100,7 @@
           <!-- 下面是选择题 -->
           <div id="scene-question-pasta" class="scene scene-question">
             <h2>Your Pasta Is Ready!</h2>
-            <p>After heating with the same amount of time, which result do you expect?</p>
+            <p class="wider">After heating with the same amount of time, which result do you expect?</p>
             <div class="gallery select" data-target="#scene-answer-pasta">
               <!-- answer pasta是self-explanation的界面 -->
               <div class="frame option" data-next="#scene-wrong-pasta">
@@ -134,7 +134,7 @@
             <p>You chose the correct answer. Microwaves can be absorbed by ceramics whereas will be reflected by metals. That’s why the pasta in the ceramic container is hotter.
 Now explain what you just learned to your partner.
 </p>
-            <a class="btn-continue" data-next="#scene-explain"><i class="fas fa-magic"></i>Continue</a>
+            <a class="btn-continue" data-next="#scene-listen"><i class="fas fa-magic"></i>Continue</a>
           </div>
           <div id="scene-wrong-pasta" class="scene scene-feedback">
             <div class="icon icon-alert">
@@ -144,7 +144,7 @@ Now explain what you just learned to your partner.
             <p>You chose the wrong answer. Microwaves can be absorbed by ceramics whereas will be reflected by metals. That’s why the pasta in the ceramic container is hotter.
 You may need to review your notes or the video before explaining to your partner.
 </p>
-            <a class="btn-continue" data-next="#scene-explain"><i class="fas fa-magic"></i>Continue</a>
+            <a class="btn-continue" data-next="#scene-listen"><i class="fas fa-magic"></i>Continue</a>
           </div>
           <!-- btn-end就是之后没有continue了，最后一个页面 -->
           <!-- pasta在这里结束，pizza在这里开始 -->
@@ -191,7 +191,7 @@ You may need to review your notes or the video before explaining to your partner
           </div>
           <div id="scene-question-pizza" class="scene scene-question">
             <h2>Your Pizza Is Ready!</h2>
-            <p>After heating with the same amount of time, which result do you expect?</p>
+            <p class="wider">After heating with the same amount of time, which result do you expect?</p>
             <div class="gallery select" data-target="#scene-answer-pizza">
               <div class="frame option" data-next="#scene-correct-pizza">
                 <p>The pizza heated with the <span>microwave oven</span> is hotter.</p>
@@ -216,16 +216,17 @@ You may need to review your notes or the video before explaining to your partner
               <i class="far fa-check-circle"></i>
             </div>
             <h2>Correct!</h2>
-            <p>Your chose the correct result. Now explain to your parter what you just learned.</p>
-            <a class="btn-continue" data-next="#scene-explain"><i class="fas fa-magic"></i>Continue</a>
+            <p>You chose the correct answer. Microwave ovens heats faster than conventional ovens because it heats all the water molecules in the food the same time, while conventional ovens heat the outside of the food and conduct heat into the insides. </p>
+            <a class="btn-continue" data-next="#scene-listen"><i class="fas fa-magic"></i>Continue</a>
           </div>
           <div id="scene-wrong-pizza" class="scene scene-feedback">
             <div class="icon icon-alert">
               <i class="far fa-times-circle"></i>
             </div>
             <h2>Incorrect</h2>
-            <p>You chose the incorrect result. Maybe you need to review your notes and the video before explaning to your partner.</p>
-            <a class="btn-continue" data-next="#scene-explain"><i class="fas fa-magic"></i>Continue</a>
+            <p>You chose the incorrect answer. Microwave ovens heats faster than conventional ovens because it heats all the water molecules in the food the same time, while conventional ovens heat the outside of the food and conduct heat into the insides. </p>
+            <p>You may want to review your notes and the video before explaning to your partner.</p>
+            <a class="btn-continue" data-next="#scene-listen"><i class="fas fa-magic"></i>Continue</a>
           </div>
           <!-- pizza到这里结束，后面是practice -->
 
@@ -358,7 +359,7 @@ You may need to review your notes or the video before explaining to your partner
 
           <!-- Explanation -->
           <div id="scene-explain" class="scene">
-            <h3>Explain to your partner what you just learned</h3>
+            <h3>Now explain to your partner what you just learned</h3>
             <p2>You can read your own notes or look back to the corresponding video piece if you need.</p2>
             <div class="explanationline">
               <div class="self-explanation">
@@ -391,7 +392,7 @@ You may need to review your notes or the video before explaining to your partner
               <a class="btn-hintvideo" data-next="#scene-video5">Hint</a>
             </div>
 
-            <a class="btn-continue" data-next="#scene-listen">
+            <a class="btn-continue" data-next="#scene-title-practice">
               <i class="far fa-check-circle"></i>Finished</a>
           </div>
           <div id="scene-listen" class="scene">
@@ -412,7 +413,7 @@ You may need to review your notes or the video before explaining to your partner
               <div class="kc">
                <p3><input type="checkbox" class="checkboxkc">Why you shouldn't use metal plates or foils in microwave ovens?</p3>
               </div>
-            <a class="btn-continue btn-listen btn-disabled" data-next="#scene-title-practice"><i class="far fa-check-circle"></i>Got Them</a>
+            <a class="btn-continue btn-listen btn-disabled" data-next="#scene-explain"><i class="far fa-check-circle"></i>Got Them</a>
           </div>
 
           <!-- video piece 1 -->

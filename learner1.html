@@ -44,7 +44,11 @@
               <i class="fas fa-glass-cheers"></i>
             </div>
             <h2>Congratulation!!!</h2>
-            <p >You got <span id="final-score">76 </span> points in total</p>
+            <p >You got <span id="final-score" class="big-score">76</span>/8 points in total.</p>
+            <p>You got <span id="l1-score" class="big-score">76</span>/4 points on the video you watched.</p>
+            <p>You got <span id="l2-score" class="big-score">76</span>/4 points on the part your partner told you!</p>
+            <p id="col-feedback">You are collaborating with your partner well and being helpful to each other!</p>
+            <p>You may want to check feedbacks of the questions and discuss with your partner on any furthur ambiguity.</p>
             <a class="btn-continue" data-next="#scene-question-1"><i class="fas fa-arrow-circle-right"></i>Feedback</a>
           </div>
 
@@ -100,7 +104,7 @@
           <!-- 下面是选择题 -->
           <div id="scene-question-pasta" class="scene scene-question">
             <h2>Your Pasta Is Ready!</h2>
-            <p>After heating with the same amount of time, which result do you expect?</p>
+            <p class="wider">After heating with the same amount of time, which result do you expect?</p>
             <div class="gallery select" data-target="#scene-answer-pasta">
               <!-- answer pasta是self-explanation的界面 -->
               <div class="frame option" data-next="#scene-wrong-pasta">
@@ -130,9 +134,7 @@
             </div>
 
             <h2>Correct!</h2>
-            <p>You chose the correct answer. Microwaves can be absorbed by ceramics whereas will be reflected by metals. That’s why the pasta in the ceramic container is hotter.
-            Now explain what you just learned to your partner.
-            </p>
+            <p>You chose the correct answer. Microwaves can penetrate ceramics whereas will be reflected by metals. That’s why the pasta in the ceramic container is hotter.</p>
             <a class="btn-continue" data-next="#scene-explain"><i class="fas fa-magic"></i>Continue</a>
           </div>
           <div id="scene-wrong-pasta" class="scene scene-feedback">
@@ -140,9 +142,8 @@
               <i class="far fa-times-circle"></i>
             </div>
             <h2>Incorrect</h2>
-            <p>You chose the wrong answer. Microwaves can be absorbed by ceramics whereas will be reflected by metals. That’s why the pasta in the ceramic container is hotter.
-            You may need to review your notes or the video before explaining to your partner.
-            </p>
+            <p>You chose the incorrect answer. Microwaves can penetrate ceramics whereas will be reflected by metals. That’s why the pasta in the ceramic container is hotter.</p>
+            <p>You may want to review your notes or the video before explaining to your partner.            </p>
             <a class="btn-continue" data-next="#scene-explain"><i class="fas fa-magic"></i>Continue</a>
           </div>
           <!-- btn-end就是之后没有continue了，最后一个页面 -->
@@ -190,7 +191,7 @@
           </div>
           <div id="scene-question-pizza" class="scene scene-question">
             <h2>Your Pizza Is Ready!</h2>
-            <p>After heating with the same amount of time, which result do you expect?</p>
+            <p class="wider">After heating with the same amount of time, which result do you expect?</p>
             <div class="gallery select" data-target="#scene-answer-pizza">
               <div class="frame option" data-next="#scene-correct-pizza">
                 <p>The pizza heated with the <span>microwave oven</span> is hotter.</p>
@@ -357,7 +358,7 @@
 
           <!-- Explanation -->
           <div id="scene-explain" class="scene">
-            <h3>Explain to your partner what you just learned</h3>
+            <h3><i class="far fa-comments"></i>Now explain to your partner what you just learned</h3>
             <p2>You can read your own notes or look back to the corresponding video piece if you need.</p2>
             <div class="explanationline">
               <div class="self-explanation">
@@ -412,7 +413,7 @@
               <div class="kc">
                <p3><input type="checkbox" class="checkboxkc">Cooked in microwave oven, would food get brown or crispy? Why?</p3>
               </div>
-            <a class="btn-continue btn-disabled btn-listen" data-next="#scene-title-practice"><i class="far fa-play-circle"></i>Got Them</a>
+            <a class="btn-continue btn-disabled btn-listen" data-next="#scene-title-practice"><i class="far fa-check-circle"></i>Got Them</a>
           </div>
 
           <!-- video piece 1 -->

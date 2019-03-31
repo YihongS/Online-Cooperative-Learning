@@ -243,7 +243,7 @@ $(document).ready(function () {
       $('.btn-listen').addClass('btn-disabled')
     }
   })
-  
+
   $('.btn-continue').click(function () {
     if (!$(this).hasClass('btn-disabled')) {
       continueScene(this);
@@ -525,6 +525,53 @@ $(document).ready(function () {
 
       console.log('countF='+countF);
       $('#final-score').text(score);
+
+      // Collaboration Feedbacks
+      var l1Score = 0;
+      if (questionsCorrect[0]) {
+        l1Score += 1;
+      }
+      if (questionsCorrect[3]) {
+        l1Score += 1;
+      }
+      if (questionsCorrect[4]) {
+        l1Score += 1;
+      }
+      if (questionsCorrect[5]) {
+        l1Score += 1;
+      }
+
+      var l2Score = 0;
+      if (questionsCorrect[1]) {
+        l2Score += 1;
+      }
+      if (questionsCorrect[2]) {
+        l2Score += 1;
+      }
+      if (questionsCorrect[6]) {
+        l2Score += 1;
+      }
+      if (questionsCorrect[7]) {
+        l2Score += 1;
+      }
+
+      if (l1Score+l2Score==score) {
+        console.log('Two Scores working great')
+      }
+      else{
+        console.log('Two Scores having trouble')
+      }
+
+      $('#l1-score').text(l1Score);
+      $('#l2-score').text(l2Score);
+
+      if (l2Score >= 3) {
+        $('#col-feedback').text('Great collaboration! Your partner taught you very well! Share this good news with him/her!')
+      } 
+      else {
+        $('#col-feedback').text('Seems like you still have some ambiguity on what your partner taught you.')
+      }
+
       // $('.feedback-icon').removeClass('hidden-icon').addClass('displayed-icon')
         // startScene('#scene-question-1');
       if (countF > 7) {
@@ -566,7 +613,7 @@ $(document).ready(function () {
       $('.option').css({"border": "none"});
 
       // Change the test scene
-      $("p:contains("+optionsChoseArray[countF]+")").parent().css({"border": "3px solid red"});
+      $("p:contains("+optionsChoseArray[countF]+")").parent().css({"border": "3px solid #A63E26"});
       // Check which option is the correct option
       Object.keys(questions[countF]).forEach(function(key){
         console.log(key,questions[countF][key]);
@@ -705,7 +752,5 @@ $(document).ready(function () {
   })
 
 
-
-
-
+  
 

@@ -553,7 +553,7 @@ $(document).ready(function () {
         $('.option').css({"border": "none"});
 
         // Change the test scene
-        $("p:contains("+optionsChoseArray[countF]+")").parent().css({"border": "3px solid red"});
+        $("p:contains("+optionsChoseArray[countF]+")").parent().css({"border": "3px solid #A63E26"});
         // Check which option is the correct option
         Object.keys(questions[countF]).forEach(function(key){
           console.log(key,questions[countF][key]);

@@ -264,7 +264,7 @@ main {
 
 
 .scene p {
-  width: 600px;
+  width: 540px;
   margin: 0 auto 8px;
   font-size: 16px;
   line-height: 25px;
@@ -607,28 +607,35 @@ footer {
   top:22px;
 }
 
-#final-score {
+#scene-explain h3{
+  width:700px;
+}
+
+.big-score {
   color:#26A69A;
   font-size: 50px;
   margin-left:5px;
   margin-right:5px;
 }
-/*.scene .icon-close:hover {
-  color: #117B71;
 
-}
-*/
+/*.big-score-low {
+  color:#A63E26;
+  font-size: 50px;
+  margin-left:5px;
+  margin-right:5px;
+}*/
 
 .option-border-green{
   border: 3px solid #26A69A;
 }
+
 .option-border-red{
-  border-color: red;
+  border-color: #A63E26;
   border-width: 3px;
 }
 
 #feedback-text{
-  width: 700px;
+  width: 680px;
   margin-top: 24px;
 }
 
@@ -753,4 +760,11 @@ button {
   background-color: #eee;
 }*/
 
+.scene .wider{
+  width: 600px;
+}
 
+.scene .fa-comments{
+  color:#26A69A;
+  margin-right:10px;
+}
