@@ -264,7 +264,7 @@ main {
 
 
 .scene p {
-  width: 540px;
+  width: 600px;
   margin: 0 auto 8px;
   font-size: 16px;
   line-height: 25px;
@@ -299,6 +299,7 @@ main {
   margin-bottom: 24px;
   margin-left:auto;
   margin-right:auto;
+  margin-top:8px;
 }
 .explanationline{
   /*display:inline-block;

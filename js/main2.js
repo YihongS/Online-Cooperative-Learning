@@ -238,6 +238,16 @@ $(document).ready(function () {
     playVideo();
     startScene('#scene-title');
   })
+
+  $(".checkboxkc").change(function(){
+    if ($('.checkboxkc:checked').length == $('.checkboxkc').length) {
+       $('.btn-listen').removeClass('btn-disabled')
+    }
+    else{
+      $('.btn-listen').addClass('btn-disabled')
+    }
+  })
+
   $('.btn-continue').click(function () {
     if (!$(this).hasClass('btn-disabled')) {
       continueScene(this);
@@ -309,7 +319,7 @@ $(document).ready(function () {
     localStorage.setItem('selfExplanationKc2',JSON.stringify(selfExplanationKc2));
     var hintKc2 = JSON.parse(localStorage.getItem('selfExplanationKc2'));
     $('#self-explanation-kc2').text(hintKc2);
-    $('#video-kc2').text(hintKc1);
+    $('#video-kc2').text(hintKc2);
   })
 
   $('#btn-continue-kc3').click(function(){
@@ -317,7 +327,7 @@ $(document).ready(function () {
     localStorage.setItem('selfExplanationKc3',JSON.stringify(selfExplanationKc3));
     var hintKc3 = JSON.parse(localStorage.getItem('selfExplanationKc3'));
     $('#self-explanation-kc3').text(hintKc3);
-    $('#video-kc3').text(hintKc1);
+    $('#video-kc3').text(hintKc3);
   })
 
   $('#btn-continue-kc4').click(function(){
@@ -325,7 +335,7 @@ $(document).ready(function () {
     localStorage.setItem('selfExplanationKc4',JSON.stringify(selfExplanationKc4));
     var hintKc4 = JSON.parse(localStorage.getItem('selfExplanationKc4'));
     $('#self-explanation-kc4').text(hintKc4);
-    $('#video-kc4').text(hintKc1);
+    $('#video-kc4').text(hintKc4);
   })
 
   $('#btn-continue-kc5').click(function(){
@@ -333,7 +343,7 @@ $(document).ready(function () {
     localStorage.setItem('selfExplanationKc5',JSON.stringify(selfExplanationKc5));
     var hintKc5 = JSON.parse(localStorage.getItem('selfExplanationKc5'));
     $('#self-explanation-kc5').text(hintKc5);
-    $('#video-kc5').text(hintKc1);
+    $('#video-kc5').text(hintKc5);
   })
 
   // 下面是对分数计算的尝试
