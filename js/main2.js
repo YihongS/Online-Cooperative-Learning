@@ -506,6 +506,8 @@ $(document).ready(function () {
     // if(countQ == questions.length){
       // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     if(countQ == questions.length){
+      $('.feedback-icon').removeClass('hidden-icon').addClass('displayed-icon');
+      console.log('显示出来了')
       // var countF = countQ- 7;
       console.log('countF='+countF);
       $('#final-score').text(score);
@@ -516,6 +518,7 @@ $(document).ready(function () {
         if (countF > 7) {
         console.log('where is countF='+countF)
         startScene('#scene-share');
+        $('.feedback-icon').removeClass('displayed-icon').addClass('hidden-icon');
         }
 
         $('#btn-continue-q').addClass("btn-continue-feedback");
@@ -530,6 +533,7 @@ $(document).ready(function () {
         if (countF == 0) {
           $('#optionD').parent().append("<p id='feedback-text'>Appended feedback text</p>");
           startScene('#scene-end');
+          $('.feedback-icon').removeClass('displayed-icon').addClass('hidden-icon');
         }
 
         // remove btn-disabled
@@ -556,12 +560,13 @@ $(document).ready(function () {
           console.log('where is countF='+countF)
           $('.gallery #feedback-text').text(feedbacks[countF][0]);
           console.log('judge correct'+feedbacks[countF][0]);
-
+          $('.feedback-icon').children('i').removeClass('fa-times-circle').addClass('fa-check-circle');
         }
         else{
           console.log('where is countF='+countF)
           $('.gallery #feedback-text').text(feedbacks[countF][1]);
           console.log('judge incorrect'+feedbacks[countF][1])
+          $('.feedback-icon').children('i').removeClass('fa-check-circle').addClass('fa-times-circle');
         }
         // add countF
         countF += 1;

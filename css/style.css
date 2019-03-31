@@ -216,7 +216,7 @@ main {
 .scene .feedback-icon{
   margin-left: 74px;
   margin-top:-16px;
-  position: fixed;
+  position: absolute;
 }
 
 .scene .hidden-icon{
