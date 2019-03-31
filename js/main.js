@@ -474,6 +474,15 @@ $(document).ready(function () {
   console.log(score);
 
   $('.btn-continue-q').click(function(){
+    // if($('#scene-end')){
+    //     $('.feedback-icon').removeClass('displayed-icon').addClass('hidden-icon');
+    //     console.log('remove掉啦');
+    //   }
+    //   else{
+    //     $('.feedback-icon').removeClass('hidden-icon').addClass('displayed-icon')
+    //     console.log('又出现了！！！');
+    //   }
+
     optionChose = currentChoice;
     // 改了这一行
     optionsChoseArray[countQ] = optionChose;
@@ -500,65 +509,84 @@ $(document).ready(function () {
     // End of question and go to feedbacks
     if(countQ == questions.length){
       // var countF = countQ- 7;
+
+      $('.feedback-icon').removeClass('hidden-icon').addClass('displayed-icon');
+      console.log('显示出来了')
+
       console.log('countF='+countF);
       $('#final-score').text(score);
+      // $('.feedback-icon').removeClass('hidden-icon').addClass('displayed-icon')
         // startScene('#scene-question-1');
-        if (countF > 7) {
-        console.log('where is countF='+countF)
-        startScene('#scene-share');
-        }
-
-        $('#btn-continue-q').addClass("btn-continue-feedback");
-        $('#exam-question').text('Question '+(countF+1)+': Feedback');
-        $('#problem-statement').text(questions[countF].problemStatement);
-        $('#optionA p').text(questions[countF].optionA);
-        $('#optionB p').text(questions[countF].optionB);
-        $('#optionC p').text(questions[countF].optionC);
-        $('#optionD p').text(questions[countF].optionD);
-        $('.option').attr("disabled","true");
-        console.log('disabled success')
-        if (countF == 0) {
-          $('#optionD').parent().append("<p id='feedback-text'>Appended feedback text</p>");
-          startScene('#scene-end');
-        }
-
-        // remove btn-disabled
-        $('.btn-continue-q').removeClass('btn-disabled')
-        // remove css .option-selected
-        $('.option').removeClass('option-selected')
-        $('.option').css({"border": "none"});
-
-        // Change the test scene
-        $("p:contains("+optionsChoseArray[countF]+")").parent().css({"border": "3px solid red"});
-        // Check which option is the correct option
-        Object.keys(questions[countF]).forEach(function(key){
-          console.log(key,questions[countF][key]);
-          if (questions[countF][key] == questions[countF].correctAnswer) {
-            $("#" + key).addClass('option-border-green');
-            $("#" + key).css({"border":"3px solid #26A69A"});
-            console.log('green border has been added')
-            console.log(questions[countF][key]+'is the correct answer')
-          }
-        });
-
-        // the feedback
-        if(questionsCorrect[countF]){
-          console.log('where is countF='+countF)
-          $('.gallery #feedback-text').text(feedbacks[countF][0]);
-          console.log('judge correct'+feedbacks[countF][0]);
-
-        }
-        else{
-          console.log('where is countF='+countF)
-          $('.gallery #feedback-text').text(feedbacks[countF][1]);
-          console.log('judge incorrect'+feedbacks[countF][1])
-        }
-        // add countF
-        countF += 1;
-        console.log('countF='+countF);
-
-
+      if (countF > 7) {
+      console.log('where is countF='+countF)
+      startScene('#scene-share');
+      $('.feedback-icon').removeClass('displayed-icon').addClass('hidden-icon');
       }
+
+      $('#btn-continue-q').addClass("btn-continue-feedback");
+      $('#exam-question').text('Question '+(countF+1)+': Feedback');
+      $('#problem-statement').text(questions[countF].problemStatement);
+      $('#optionA p').text(questions[countF].optionA);
+      $('#optionB p').text(questions[countF].optionB);
+      $('#optionC p').text(questions[countF].optionC);
+      $('#optionD p').text(questions[countF].optionD);
+      $('.option').attr("disabled","true");
+      console.log('disabled success')
+      if (countF == 0) {
+        $('#optionD').parent().append("<p id='feedback-text'>Appended feedback text</p>");
+        startScene('#scene-end');
+        $('.feedback-icon').removeClass('displayed-icon').addClass('hidden-icon');
+      }
+
+      // if($('h2').text()=="Congratulation!!!"){
+      //   $('.feedback-icon').removeClass('displayed-icon').addClass('hidden-icon');
+      //   console.log('remove掉啦');
+      // }
+      // else{
+      //   console.log('没remove掉！！！');
+      // }
+
+
+      
+
+      // remove btn-disabled
+      $('.btn-continue-q').removeClass('btn-disabled')
+      // remove css .option-selected
+      $('.option').removeClass('option-selected')
+      $('.option').css({"border": "none"});
+
+      // Change the test scene
+      $("p:contains("+optionsChoseArray[countF]+")").parent().css({"border": "3px solid red"});
+      // Check which option is the correct option
+      Object.keys(questions[countF]).forEach(function(key){
+        console.log(key,questions[countF][key]);
+        if (questions[countF][key] == questions[countF].correctAnswer) {
+          $("#" + key).addClass('option-border-green');
+          $("#" + key).css({"border":"3px solid #26A69A"});
+          console.log('green border has been added')
+          console.log(questions[countF][key]+'is the correct answer')
+        }
+      });
+
+      // the feedback
+      if(questionsCorrect[countF]){
+        console.log('where is countF='+countF)
+        $('.gallery #feedback-text').text(feedbacks[countF][0]);
+        console.log('judge correct'+feedbacks[countF][0]);
+        $('.feedback-icon').children('i').removeClass('fa-times-circle').addClass('fa-check-circle');
+      }
+      else{
+        console.log('where is countF='+countF)
+        $('.gallery #feedback-text').text(feedbacks[countF][1]);
+        console.log('judge incorrect'+feedbacks[countF][1])
+        $('.feedback-icon').children('i').removeClass('fa-check-circle').addClass('fa-times-circle');
+      }
+      // add countF
+      countF += 1;
+      console.log('countF='+countF);
+      
+
+    }
       else{
         if (!$(this).hasClass('btn-disabled')) {
           $(this).parent('.scene').find('.gallery .option').removeClass('option-selected');

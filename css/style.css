@@ -213,6 +213,36 @@ main {
   color: #A63E26;
 }
 
+.scene .feedback-icon{
+  margin-left: 74px;
+  margin-top:-16px;
+  position: fixed;
+}
+
+.scene .hidden-icon{
+  display:none;
+}
+
+.scene .displayed-icon{
+  display:block;
+}
+
+.scene .feedback-icon .fa-check-circle{
+  height: 60px;
+  color: #26A69A;
+  font-size: 60px;
+}
+
+.scene .feedback-icon .fa-times-circle{
+  height: 60px;
+  color: #A63E26;
+  font-size: 60px;
+}
+
+/*.scene .inline h2{
+  display: inline-block;
+}*/
+
 .scene h2 {
   width: 540px;
   margin-bottom: 24px;
