@@ -234,6 +234,16 @@ $(document).ready(function () {
     playVideo();
     startScene('#scene-title');
   })
+
+  $(".checkboxkc").change(function(){
+    if ($('.checkboxkc:checked').length == $('.checkboxkc').length) {
+       $('.btn-listen').removeClass('btn-disabled')
+    }
+    else{
+      $('.btn-listen').addClass('btn-disabled')
+    }
+  })
+  
   $('.btn-continue').click(function () {
     if (!$(this).hasClass('btn-disabled')) {
       continueScene(this);

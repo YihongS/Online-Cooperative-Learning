@@ -741,13 +741,15 @@ button {
 .kc input {
   margin-left: 10px;
   margin-right:10px;
+  height: 16px;
+  width: 16px;
 }
 
 
-.checkmark {
+/*.checkmark {
   height: 30px;
   width: 30px;
   background-color: #eee;
-}
+}*/
 
 
