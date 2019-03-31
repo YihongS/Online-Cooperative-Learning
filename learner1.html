@@ -355,15 +355,14 @@
             <p2>You can read your own notes or look back to the corresponding video piece if you need.</p2>
             <div class="explanationline">
               <div class="self-explanation">
-               <p3 id="self-explanation-kc1">explanation explanation explanation</p3>
+               <p3 id="self-explanation-kc1"></p3>
               </div>
-              <a class="icon-play" data-next="#scene-video1">
-                Hint
-              </a>
+              <a id = "btn-hint2" data-next="#scene-video1" >Hint</a>
+
             </div>
             <div class="explanationline">
               <div class="self-explanation">
-               <p3 id="self-explanation-kc2">explanation explanation explanation</p3>
+               <p3 id="self-explanation-kc2"></p3>
               </div>
               <a class="icon-play" data-next="#scene-video2">
                 Hint
@@ -371,7 +370,7 @@
             </div>
             <div class="explanationline">
               <div class="self-explanation">
-               <p3 id="self-explanation-kc3">explanation explanation explanation</p3>
+               <p3 id="self-explanation-kc3"></p3>
               </div>
               <a class="icon-play" data-next="#scene-video3">
                 Hint
@@ -379,7 +378,7 @@
             </div>
             <div class="explanationline">
               <div class="self-explanation">
-               <p3 id="self-explanation-kc4">explanation explanation explanation</p3>
+               <p3 id="self-explanation-kc4"></p3>
               </div>
               <a class="icon-play" data-next="#scene-video4">
                 Hint
@@ -387,7 +386,7 @@
             </div>
             <div class="explanationline">
               <div class="self-explanation">
-               <p3 id="self-explanation-kc5">explanation explanation explanation</p3>
+               <p3 id="self-explanation-kc5"></p3>
               </div>
               <a class="icon-play" data-next="#scene-video5">
                 Hint
@@ -426,7 +425,7 @@
             <h4>Part1</h4>
             <iframe class="videopiece" src="https://youtube.com/embed/zt-CLmZhLiA"></iframe>
               <div class="kcexplain">
-               <p3 id="video-kc1">self explanation1</p3>
+               <p3 id="video-kc1"></p3>
               </div>
           </div>
 
@@ -438,7 +437,7 @@
             <h4>Part2</h4>
             <iframe class="videopiece" src="https://youtube.com/embed/v--baKovZ7M"></iframe>
               <div class="kcexplain">
-               <p3 id="video-kc2">self explanation2</p3>
+               <p3 id="video-kc2"></p3>
               </div>
           </div>
 
@@ -450,7 +449,7 @@
             <h4>Part3</h4>
             <iframe class="videopiece" src="https://youtube.com/embed/H1-IOeu6j94"></iframe>
               <div class="kcexplain">
-               <p3 id="video-kc3">self explanation3</p3>
+               <p3 id="video-kc3"></p3>
               </div>
           </div>
 
@@ -462,7 +461,7 @@
             <h4>Part4</h4>
             <iframe class="videopiece" src="https://youtube.com/embed/E9vG4JwjKWQ"></iframe>
               <div class="kcexplain">
-               <p3 id="video-kc4">self explanation4</p3>
+               <p3 id="video-kc4"></p3>
               </div>
           </div>
 
@@ -474,22 +473,28 @@
             <h4>Part5</h4>
             <iframe class="videopiece" src="https://youtube.com/embed/dKdjVH13Xsk"></iframe>
               <div class="kcexplain">
-               <p3 id="video-kc5">self explanation5</p3>
+               <p3 id="video-kc5"></p3>
               </div>
           </div>
 
           <!-- 这里开始是前面每一kc的self-explanation -->
           <div id="scene-kc1" class="scene scene-answer">
             <h2>What did you learn?</h2>
-            <p>What is microwave?</p>
-            <textarea id="input-answer-kc1" class="input-answer" rows="4" placeholder="Explain in a way that you would explain it to your partner."></textarea>
-            <a id = "btn-continue-kc1" class="btn-end btn-continue btn-disabled"><i class="fas fa-magic"></i>Continue</a>
+            <p>You will explain to your partner: <span class = "green">What is microwave?</span></p>
+            <p>Take notes here to help prepare for your teaching.</p>
+            <div id="textbox-and-hint-1" class="textbox-and-hint">
+              <textarea id="input-answer-kc1" class="input-answer narrower-inputbox" rows="2" placeholder="Explain in a way that you would explain it to your partner."></textarea>
+              <a id = "btn-hint1" class="btn-hint">Hint</a>
+            </div>
+            <a id = "btn-continue-kc1" class="btn-end btn-continue btn-disabled margin-top"><i class="fas fa-magic"></i>Continue</a>
           </div>
 
           <div id="scene-kc2" class="scene scene-answer">
             <h2>What did you learn?</h2>
-            <p>What absorbs microwave and what does not? So microwave oven will heat what but will not heat what?</p>
+            <p>You will explain to you partner two questions: 1. What absorbs microwave and what does not? 2. Microwave oven will heat what but will not heat what?</p>
+            <p>Take notes here on how you will explain. You can click hint if you don't remember clearly.</p>
             <textarea id="input-answer-kc2" class="input-answer" rows="4" placeholder="Explain in a way that you would explain it to your partner."></textarea>
+            <a id = "btn-hint2" >Hint</a>
             <a id = "btn-continue-kc2" class="btn-end btn-continue btn-disabled"><i class="fas fa-magic"></i>Continue</a>
           </div>
 

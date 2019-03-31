@@ -598,3 +598,24 @@ $(document).ready(function () {
 
 
 })
+
+var hint1 = false;
+  $('#btn-hint1').click(function(){
+    console.log('hinthinthint')
+    if (!hint1) {
+      $( "<p class='hint-text'>Microwaves are electromagnetic waves. </p>" ).insertAfter( "#textbox-and-hint-1" );
+      // $(this).addClass('hint-text');
+      // console.log(this);
+      // $('#input-answer-kc1').append("Microwaves are electromagnetic waves that fly through space at the speed of light. ")
+
+      hint1 = true;
+      $('#btn-hint1').addClass('btn-disabled')
+    };
+  })
+
+  $('#btn-hint2').click(function(){
+    console.log('hinthinthint')
+    $('#btn-hint1').parent().append("Microwaves are electromagnetic waves that fly through space at the speed of light. ")
+  })
+
+

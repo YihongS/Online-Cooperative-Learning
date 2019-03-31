@@ -143,7 +143,7 @@ main {
   border-radius: 8px;
   cursor: pointer;
   transition: .3s all ease-in-out;
-  margin:20px auto;
+  margin:10px auto;
   text-decoration: none;
 }
 
@@ -235,9 +235,9 @@ main {
 
 .scene p {
   width: 540px;
-  margin: 0 auto 24px;
+  margin: 0 auto 8px;
   font-size: 16px;
-  line-height: 28px;
+  line-height: 25px;
   text-align: center;
 }
 
@@ -606,3 +606,55 @@ button {
 .self-explanation.fa-font:before {
     content: "";
 }
+
+.kclearned {
+  display:inline-block;
+}
+
+.green{
+  color:#26A69A;
+}
+
+.scene .btn-hint{
+  width: 80px;
+  /*height: 60px;*/
+  /*margin:0 30px;*/
+  display: inline-block;
+  /*position: absolute;*/
+  margin-right: 0;
+  /*margin-left: 30px;*/
+  float: right;
+  padding:10px 0;
+  font-size: 16px;
+
+}
+
+.scene .textbox-and-hint .narrower-inputbox{
+  width:80%;
+  display: inline-block;
+  margin:0;
+}
+
+.textbox-and-hint{
+  /*display: block;*/
+  /*margin: 30px 0;*/
+  padding: 30px;
+  padding-bottom: 15px;
+  display: -webkit-flex; /* Safari */
+  -webkit-align-items: center; /* Safari 7.0+ */
+  display: flex;
+  align-items: center;
+}
+
+.scene .hint-text{
+  margin-bottom: 50px;
+  color:#26A69A;
+}
+
+.scene .margin-top{
+  margin-top: 30px
+}
+
+
+
+
