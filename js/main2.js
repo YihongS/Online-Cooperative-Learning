@@ -281,7 +281,7 @@ $(document).ready(function () {
     $btnTarget.data('next', next);
   })
   $('.input-answer').on('change keyup paste', function() {
-    var $btn = $(this).parent('.scene').find('.btn-continue');
+    var $btn = $(this).parents('.scene').find('.btn-continue');
     if ($(this).val().length === 0) {
       $btn.addClass('btn-disabled');
     } else {
@@ -612,3 +612,74 @@ $(document).ready(function () {
 
 
 })
+
+  $('#btn-hint1').click(function(){
+    $('#input-answer-kc1').val('');
+    $('#input-answer-kc1').attr("placeholder", "Hint: Exposed to microwaves, water molecules will be twisted back and forth.");
+    var $btn = $(this).parents('.scene').find('.btn-continue');
+    if ($(this).val().length === 0) {
+      $btn.addClass('btn-disabled');
+    } else {
+      $btn.removeClass('btn-disabled');
+    }
+  })
+
+
+  $('#btn-hint2').click(function(){
+    $('#input-answer-kc2').val('');
+    $('#input-answer-kc2').attr("placeholder", "Hint: The water molecules are being twisted back and forth rapidly because the field reverses rather rapidly. As the molecules twist back and forth, they rub into each other, which creates friction and produces heat. ");
+    var $btn = $(this).parents('.scene').find('.btn-continue');
+    if ($(this).val().length === 0) {
+      $btn.addClass('btn-disabled');
+    } else {
+      $btn.removeClass('btn-disabled');
+    }
+  })
+
+  $('#btn-hint3').click(function(){
+    $('#input-answer-kc3').val('');
+    $('#input-answer-kc3').attr("placeholder", "Hint: In a conventional oven, heats needs to migrate by conduction from the outside of the food toward the middle. ");
+    var $btn = $(this).parents('.scene').find('.btn-continue');
+    if ($(this).val().length === 0) {
+      $btn.addClass('btn-disabled');
+    }
+    else {
+      $btn.removeClass('btn-disabled');
+    }
+  })
+
+  $('#btn-hint4').click(function(){
+    $('#input-answer-kc4').val('');
+    $('#input-answer-kc4').attr("placeholder", "Hint: A microwave cooks food much faster than a conventional oven because it heats both the inside and outside of the food the same time. ");
+    var $btn = $(this).parents('.scene').find('.btn-continue');
+    if ($(this).val().length === 0) {
+      $btn.addClass('btn-disabled');
+    } else {
+      $btn.removeClass('btn-disabled');
+    }
+  })
+
+  $('#btn-hint5').click(function(){
+    $('#input-answer-kc5').val('');
+    $('#input-answer-kc5').attr("placeholder", "Hint: Because the air inside the microwave oven is room temperature, foods don't get brown or crispy as they would with other forms of cooking.");
+    var $btn = $(this).parents('.scene').find('.btn-continue');
+    if ($(this).val().length === 0) {
+      $btn.addClass('btn-disabled');
+    } else {
+      $btn.removeClass('btn-disabled');
+    }
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -599,20 +599,75 @@ $(document).ready(function () {
 
 })
 
-var hint1 = false;
+// var hint1 = false;
+//   $('#btn-hint1').click(function(){
+//     if (!hint1) {
+//       // $( "<p class='hint-text'>Microwaves are electromagnetic waves. </p>" ).insertAfter( "#textbox-and-hint-1" );
+//       $('#input-answer-kc1').attr("placeholder", "Microwaves are electromagnetic waves.");
+//       hint1 = true;
+//       $('#btn-hint1').addClass('btn-disabled')
+
+//     };
+//   })
+
   $('#btn-hint1').click(function(){
-    console.log('hinthinthint')
-    if (!hint1) {
-      // $( "<p class='hint-text'>Microwaves are electromagnetic waves. </p>" ).insertAfter( "#textbox-and-hint-1" );
-      $('#input-answer-kc1').attr("placeholder", "Microwaves are electromagnetic waves.");
-      hint1 = true;
-      $('#btn-hint1').addClass('btn-disabled')
-    };
+    $('#input-answer-kc1').val('');
+    $('#input-answer-kc1').attr("placeholder", "Hint: Microwaves are electromagnetic waves.");
+    var $btn = $(this).parents('.scene').find('.btn-continue');
+    if ($(this).val().length === 0) {
+      $btn.addClass('btn-disabled');
+    } else {
+      $btn.removeClass('btn-disabled');
+    }
   })
 
   $('#btn-hint2').click(function(){
-    console.log('hinthinthint')
-    $('#btn-hint1').parent().append("Microwaves are electromagnetic waves that fly through space at the speed of light. ")
+    $('#input-answer-kc2').val('');
+    $('#input-answer-kc2').attr("placeholder", "Hint: Microwaves are easily absorbed by water, fat, and sugar, but not by most plastics, ceramics, or glasses. These waves are converted into heates when they are absorbed.");
+    var $btn = $(this).parents('.scene').find('.btn-continue');
+    if ($(this).val().length === 0) {
+      $btn.addClass('btn-disabled');
+    }
+    else {
+      $btn.removeClass('btn-disabled');
+    }
   })
+
+  $('#btn-hint3').click(function(){
+    $('#input-answer-kc3').val('');
+    $('#input-answer-kc3').attr("placeholder", "Hint: The microwaves are at the right frequency to penetrate deep into food and they deliver cooking power primarily to the food's water content. ");
+    var $btn = $(this).parents('.scene').find('.btn-continue');
+    if ($(this).val().length === 0) {
+      $btn.addClass('btn-disabled');
+    } else {
+      $btn.removeClass('btn-disabled');
+    }
+  })
+
+  $('#btn-hint4').click(function(){
+    $('#input-answer-kc4').val('');
+    $('#input-answer-kc4').attr("placeholder", "Hint: Water-free solids barely absorb microwaves. That's why microwave-safe containers don't get as hot as the food inside them. ");
+    var $btn = $(this).parents('.scene').find('.btn-continue');
+    if ($(this).val().length === 0) {
+      $btn.addClass('btn-disabled');
+    } else {
+      $btn.removeClass('btn-disabled');
+    }
+  })
+
+  $('#btn-hint5').click(function(){
+    $('#input-answer-kc5').val('');
+    $('#input-answer-kc5').attr("placeholder", "Hint: Metal will reflect microwaves, which is why you shouldn't use metal plates or foil in these devices. ");
+    var $btn = $(this).parents('.scene').find('.btn-continue');
+    if ($(this).val().length === 0) {
+      $btn.addClass('btn-disabled');
+    } else {
+      $btn.removeClass('btn-disabled');
+    }
+  })
+
+
+
+
 
 
