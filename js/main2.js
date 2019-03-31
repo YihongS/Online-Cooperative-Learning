@@ -254,7 +254,7 @@ $(document).ready(function () {
   })
 
 
-  $('.icon-play').click(function () {
+  $('.btn-hintvideo').click(function () {
     explainpart($(this))
   })
 
