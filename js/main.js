@@ -122,7 +122,7 @@ function continueScene(el) {
       if (next.includes('scene-timer')) {//播放声音
         document.getElementById('sound').play();
         // !!!!!!!!!!important!
-        setTimeout(continueScene, 4000, $(next).find('.btn-continue'));
+        setTimeout(continueScene, 4, $(next).find('.btn-continue'));
       } else if (next.includes('scene-end')) {
         document.getElementById('ending').play();
       }
@@ -277,7 +277,7 @@ $(document).ready(function () {
     $btnTarget.data('next', next);
   })
   $('.input-answer').on('change keyup paste', function() {
-    var $btn = $(this).parent('.scene').find('.btn-continue');
+    var $btn = $(this).parents('.scene').find('.btn-continue');
     if ($(this).val().length === 0) {
       $btn.addClass('btn-disabled');
     } else {
