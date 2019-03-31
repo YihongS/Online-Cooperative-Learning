@@ -271,19 +271,26 @@ main {
   margin-right:auto;
 }
 .explanationline{
-  display:inline-block
+  /*display:inline-block;
+  align-items:middle;*/
+  display: -webkit-flex; /* Safari */
+  -webkit-align-items: center; /* Safari 7.0+ */
+  display: flex;
+  align-items: center;
 }
 
 .self-explanation {
-  display: inline-block;
-  width: 700px;
-  height: 60px;
-  border-radius:8px;
-  box-sizing: border-box;
-  margin-top:12px;
-  padding-left:14px;
-  padding-top:12px;
-  background: #FFFBF0;
+    display: inline-block;
+    width: 700px;
+    height: 60px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding-left: 14px;
+    padding-top: 12px;
+    background: #FFFBF0;
+    align-items: center;
 }
 
 .kc {
@@ -627,6 +634,19 @@ button {
   padding:10px 0;
   font-size: 16px;
 
+}
+
+.scene .btn-hintvideo{
+  width: 80px;
+  /*height: 60px;*/
+  /*margin:0 30px;*/
+  display: inline-block;
+  /*position: absolute;*/
+  margin-right: 0;
+  /*margin-left: 30px;*/
+  float: right;
+  padding:10px 0;
+  font-size: 16px;
 }
 
 .scene .textbox-and-hint .narrower-inputbox{

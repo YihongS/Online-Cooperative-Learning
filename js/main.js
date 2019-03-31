@@ -136,7 +136,7 @@ function explainpart(el){
     $(next).fadeIn(function(){
       if (next.includes('scene-timer')) {//播放声音
         document.getElementById('sound').play();
-        setTimeout(continueScene, 4000, $(next).find('.btn-continue'));
+        setTimeout(continueScene, 4, $(next).find('.btn-continue'));
       } else if (next.includes('scene-end')) {
         document.getElementById('ending').play();
       }
@@ -250,7 +250,7 @@ $(document).ready(function () {
   })
 
 
-  $('.icon-play').click(function () {
+  $('.btn-hintvideo').click(function () {
     explainpart($(this))
   })
 
@@ -603,11 +603,8 @@ var hint1 = false;
   $('#btn-hint1').click(function(){
     console.log('hinthinthint')
     if (!hint1) {
-      $( "<p class='hint-text'>Microwaves are electromagnetic waves. </p>" ).insertAfter( "#textbox-and-hint-1" );
-      // $(this).addClass('hint-text');
-      // console.log(this);
-      // $('#input-answer-kc1').append("Microwaves are electromagnetic waves that fly through space at the speed of light. ")
-
+      // $( "<p class='hint-text'>Microwaves are electromagnetic waves. </p>" ).insertAfter( "#textbox-and-hint-1" );
+      $('#input-answer-kc1').attr("placeholder", "Microwaves are electromagnetic waves.");
       hint1 = true;
       $('#btn-hint1').addClass('btn-disabled')
     };
