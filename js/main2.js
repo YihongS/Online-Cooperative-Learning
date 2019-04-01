@@ -463,7 +463,7 @@ $(document).ready(function () {
   "Incorrect. Because the field reverses 2.5 billion times a second, the water molecules are being twisted back and forth when exposed to the microwave’s electric field, rapidly and they rub into each other, which will create friction and produce heat. "],
 
   ["Correct. Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would with other forms of cooking. ",
-  "Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would with other forms of cooking. "],
+  "Incorrect. Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would with other forms of cooking. "],
 
   ["Correct. In a conventional oven, heats needs to migrate by conduction from the outside of the food toward the middle. Hot, dry air on the outside evaporates moisture, so the outside could be crispy and brown while the inside is still moist. Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would with other forms of cooking.",
   "Incorrect. In a conventional oven, heats needs to migrate by conduction from the outside of the food toward the middle. Hot, dry air on the outside evaporates moisture, so the outside could be crispy and brown while the inside is still moist. Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would with other forms of cooking. "],
@@ -521,6 +521,52 @@ $(document).ready(function () {
       // var countF = countQ- 7;
       console.log('countF='+countF);
       $('#final-score').text(score);
+
+      // Collaboration Feedbacks
+      var l1Score = 0;
+      if (questionsCorrect[0]) {
+        l1Score += 1;
+      }
+      if (questionsCorrect[3]) {
+        l1Score += 1;
+      }
+      if (questionsCorrect[4]) {
+        l1Score += 1;
+      }
+      if (questionsCorrect[5]) {
+        l1Score += 1;
+      }
+
+      var l2Score = 0;
+      if (questionsCorrect[1]) {
+        l2Score += 1;
+      }
+      if (questionsCorrect[2]) {
+        l2Score += 1;
+      }
+      if (questionsCorrect[6]) {
+        l2Score += 1;
+      }
+      if (questionsCorrect[7]) {
+        l2Score += 1;
+      }
+
+      if (l1Score+l2Score==score) {
+        console.log('Two Scores working great')
+      }
+      else{
+        console.log('Two Scores having trouble')
+      }
+
+      $('#l1-score').text(l1Score);
+      $('#l2-score').text(l2Score);
+
+      if (l1Score >= 3) {
+        $('#col-feedback').text('Great collaboration! Your partner taught you very well! Share this good news with him/her!')
+      } 
+      else {
+        $('#col-feedback').text('Seems like you still have some ambiguity on what your partner taught you.')
+      }
 
       // 这里需要改成scene-score或者scene-feedback什么的
         // startScene('#scene-question-1');
