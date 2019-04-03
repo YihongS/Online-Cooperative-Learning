@@ -266,7 +266,7 @@ $(document).ready(function () {
 
 
   $('.btn-share').click(function () {
-    var url = "https://polarischen.github.io/tol-microwave/";
+    var url = "https://vivigong.github.io/tol-microwave/";
     var text = "Do you know how microwave ovens work? Check this out! 😉";
     var twitterWindow = window.open('https://twitter.com/share?url=' + url + '&text=' + text, 'twitter-popup', 'height=350, width=600');
     if (twitterWindow.focus) {
@@ -402,7 +402,7 @@ $(document).ready(function () {
   }
 
     var question7 = {
-    problemStatement:'How does the water molecule get energy when exposed to microwave oven?',
+    problemStatement:'How does the water molecule get heated when exposed to microwave oven?',
     optionA:'A. The water molecule gets twisted back and forth and heated through friction',
     optionB:'B. The container conducts heat to the water molecule',
     optionC:'C. Other content in the food conducts heat to the water molecule',

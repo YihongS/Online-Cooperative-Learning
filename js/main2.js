@@ -270,7 +270,7 @@ $(document).ready(function () {
 
 
   $('.btn-share').click(function () {
-    var url = "https://polarischen.github.io/tol-microwave/";
+    var url = "https://vivigong.github.io/tol-microwave/";
     var text = "Do you know how microwave ovens work? Check this out! 😉";
     var twitterWindow = window.open('https://twitter.com/share?url=' + url + '&text=' + text, 'twitter-popup', 'height=350, width=600');
     if (twitterWindow.focus) {
@@ -411,7 +411,7 @@ $(document).ready(function () {
   }
 
     var question7 = {
-    problemStatement:'How does the water molecule get energy when exposed to microwave oven?',
+    problemStatement:'How does the water molecule get heated when exposed to microwave oven?',
     optionA:'A. The water molecule gets twisted back and forth and heated through friction',
     optionB:'B. The container conducts heat to the water molecule',
     optionC:'C. Other content in the food conducts heat to the water molecule',
@@ -453,17 +453,17 @@ $(document).ready(function () {
   ["Correct. Water-free solids barely absorb microwaves. That's why microwave-safe containers don't get as hot as the food inside them. ",
   "Incorrect. Ceramic is water-free and barely absorbs microwaves, whereas the water molecules in the food will be activated by microwaves and heated. That’s why the ceramic container won’t get as hot as the food inside it."],
 
-  ["Correct. Since metal will reflect microwaves, it cannot be used in a microwave oven.",
+  ["Correct. Since metal will reflect microwaves, food in the metal container will not get as hot as in other containers. So you's better not use metal container in a microwave oven.",
   "Incorrect. Since metal will reflect microwaves, it cannot be used in a microwave oven. All the other three containers can be penetrated by microwaves but barely absorb microwaves, which means they are suitable to be used in a microwave oven."],
 
   ["Correct. Microwaves heat food by activating the water molecules in the food.",
-  "Incorrect. Metal will reflect microwaves. Plastic and glass barely absorb microwaves. Water is the mostly easily absorbed material by microwaves."],
+  "Incorrect. Metal will reflect microwaves. Plastic and glass barely absorb microwaves. Water absorbs microwaves most easily and get heated."],
 
-  ["Correct. Because the field reverses 2.5 billion times a second, the water molecules are being twisted back and forth when exposed to the microwave’s electric field, rapidly and they rub into each other, which will create friction and produce heat. ",
-  "Incorrect. Because the field reverses 2.5 billion times a second, the water molecules are being twisted back and forth when exposed to the microwave’s electric field, rapidly and they rub into each other, which will create friction and produce heat. "],
+  ["Correct. Because the field reverses 2.5 billion times a second, the water molecules are being twisted back and forth rapidly when exposed to the microwave’s electric field. They rub into each other, which will create friction and produce heat. ",
+  "Incorrect. Because the field reverses 2.5 billion times a second, the water molecules are being twisted back and forth rapidly when exposed to the microwave’s electric field. They rub into each other, which will create friction and produce heat. "],
 
-  ["Correct. Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would with other forms of cooking. ",
-  "Incorrect. Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would with other forms of cooking. "],
+  ["Correct. Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would in a conventional oven. ",
+  "Incorrect. Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would in a conventional oven. "],
 
   ["Correct. In a conventional oven, heats needs to migrate by conduction from the outside of the food toward the middle. Hot, dry air on the outside evaporates moisture, so the outside could be crispy and brown while the inside is still moist. Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would with other forms of cooking.",
   "Incorrect. In a conventional oven, heats needs to migrate by conduction from the outside of the food toward the middle. Hot, dry air on the outside evaporates moisture, so the outside could be crispy and brown while the inside is still moist. Microwaves penetrate the food, and excite the water and fat molecules more or less evenly throughout. Since the air inside the microwave oven is room temperature, foods don’t get brown or crispy as they would with other forms of cooking. "],
