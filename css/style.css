@@ -769,6 +769,6 @@ button {
   margin-right:10px;
 }
 
-.narrow-top{
-  margin-top: 20px;
+.scene .narrow-top{
+  margin-top: 0px;
 }
