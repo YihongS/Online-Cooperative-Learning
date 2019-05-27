@@ -1,5 +1,7 @@
 # How Microwave Ovens Work
 
+To try the cooperative learning experience, you'll want to invite a friend to open this page with you and each choose learner 1 or learner 2 to start the experience.
+
 ## Description
 
 This project is for **Tools for Online Learning** at CMU.
